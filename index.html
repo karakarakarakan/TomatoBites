@@ -1134,6 +1134,7 @@
             <div class="py-2 border-b mb-1">
               <div class="font-semibold sm:text-lg">🎰 一番赏</div>
             </div>
+
             <p class="py-2 text-sm">消耗 300 🪙，可自定义</p>
           </div>
         </a>
@@ -1420,23 +1421,33 @@
       <div class="mb-3"><button class="border rounded px-3 py-2" data-home="">🏠 返回首页</button></div>
       <div class="grid md:grid-cols-2 gap-4">
         <div class="border rounded-xl">
-          <div class="p-3 border-b font-semibold">🎰 一番赏</div>
+          <div class="p-3 sm:p-4 border-b grid grid-cols-2 gap-3 items-center justify-between sm:grid">
+            <div class="font-semibold mb-1 sm:text-lg">🎰 一番赏</div>
+            <button class="border rounded p-1" id="btnPool">🔧 设置奖池</button>
+          </div>
           <div class="p-4 space-y-4">
-            <div class="flex items-center gap-2">
-              <span class="inline-flex items-center border rounded px-2 py-1">300 🪙/次</span>
-              <span class="inline-flex items-center border rounded px-2 py-1">A 3% / B 8.5% / C88.5%</span>
+            <!-- 当前奖池标题 -->
+            <div class="text-center font-bold text-lg" id="currentPoolTitle">当前奖池：默认奖池</div>
+            <div class="flex justify-center gap-4">
+              <span class="inline-flex items-center border rounded px-2 py-1">A 3% / B 8.5% / C 88.5%</span>
             </div>
+            <!-- 切换奖池按钮 -->
+            <div class="flex justify-center gap-4">
+              <button class="border rounded px-3 py-2" id="prevPoolBtn">⬅️ 切换奖池</button>
+              <button class="border rounded px-3 py-2" id="nextPoolBtn">切换奖池 ➡️</button>
+            </div>
+
             <div
               class="h-48 rounded-2xl bg-gradient-to-br from-white to-slate-50 border relative grid place-items-center perspective">
               <div class="w-64 h-36 preserve-3d flip-card" id="flipWrap">
                 <div
                   class="absolute inset-0 rounded-xl bg-white/90 border shadow grid place-items-center backface-hidden">
-                  <span class="text-2xl select-none">❓ 点击开始翻牌</span>
+                  <span class="text-2xl select-none">会抽出什么呢 ❓</span>
                 </div>
                 <div
                   class="absolute inset-0 rounded-xl bg-amber-50 border shadow grid place-items-center backface-hidden rotate-y-180">
                   <div class="text-center space-y-2 hidden" id="lotteryResult">
-                    <div class="text-sm text-slate-500">恭喜获得</div>
+                    <div class="text-sm text-slate-500">抽到的是！</div>
                     <div class="text-2xl font-bold flex items-center justify-center gap-2">
                       <span>👑</span>
                       <span id="lotteryPrize">—</span>
@@ -1446,11 +1457,14 @@
                 </div>
               </div>
             </div>
-            <div class="flex gap-2">
-              <button class="border rounded px-3 py-2" id="btnDraw">开始抽奖</button>
-              <button class="border rounded px-3 py-2" id="btnPool">设置奖池</button>
+            <div class="flex justify-center gap-4">
+              <button class="border rounded px-3 py-2" id="btnDraw">⭐ 单抽 300🪙</button>
+              <button class="border rounded px-3 py-2" id="btnDraw10">🌟 10连！ 3000🪙</button>
+            </div>
+            <div class="flex justify-center items-center">
               <button class="border rounded px-3 py-2" id="btnLotteryLog">📒 抽奖记录</button>
             </div>
+
             <div class="mt-3 border rounded-xl bg-white/70 p-3 hidden" id="lotteryLogPanel">
               <div class="flex items-center justify-between mb-2">
                 <div class="font-semibold">抽奖记录</div><button class="border rounded px-2 py-1 text-sm"
@@ -1476,13 +1490,19 @@
       </div>
     </section>
 
-    <!-- 公告页（规则） -->
-    <section class="hidden" id="view-notice">
-      <div class="mb-3"><button class="border rounded px-3 py-2" data-home="">🏠 返回首页</button></div>
-      <div class="border rounded-xl">
-        <div class="p-3 border-b font-semibold">📜 公告与规则</div>
-        <div class="p-4 text-sm">
-          <p>见首页与各功能页说明。</p>
+    <!-- 动态生成奖池列表 -->
+    <section class="hidden" id="view-pool-settings">
+      <div class="mb-3 flex justify-between">
+        <button class="border rounded px-3 py-2" data-home="">🏠 返回首页</button>
+        <button class="border rounded px-3 py-2" id="btnBackToLottery">🎰 返回一番赏</button>
+      </div>
+      <div class="border rounded-xl justify-center gap-4">
+                  <div class="p-3 sm:p-4 border-b grid grid-cols-2 gap-3 items-center justify-between sm:grid">
+            <div class="font-semibold mb-1 sm:text-lg">🔧 设置奖池</div>
+          </div>
+        <div id="poolList" class="space-y-4"></div>
+        <div class="flex justify-center items-center p-4">
+          <button id="addPoolBtn" class="border rounded px-3 py-2 bg-amber-50 bt-5">➕ 添加奖池</button>
         </div>
       </div>
     </section>
@@ -1633,14 +1653,20 @@
                 <div class="py-1 font-semibold mb-2">❓ 关于</div>
                 <div class="border-b mb-4"></div>
                 <div class="text-sm text-slate-600 space-y-2">
-                  <div>名称：请吃小番茄/TomatoBites</span></div>
-                  <div>版本：v1.0.0</span></div>
-                  <div>作者：空港</div>
+                  <div>名称： 请吃小番茄/TomatoBites</span></div>
+                  <div>版本： v1.0.2</span></div>
                   <div>
-                    配布：
+                    Github：
                     <a class="text-blue-600 underline" href="https://github.com/karakarakarakan/TomatoBites"
                       target="_blank" rel="noopener">
                       TomatoBites
+                    </a>
+                  </div>
+                  <div>
+                    创意来源感谢😗❤️！：
+                    <a class="text-blue-600 underline" href="http://xhslink.com/o/Y6aBXTZpCa" target="_blank"
+                      rel="noopener">
+                      @竹土土今天好好生活了吗
                     </a>
                   </div>
 
@@ -1664,25 +1690,6 @@
     <footer class="mt-10 text-center text-sm text-slate-500">© <span id="year">2025</span> 🍅请吃小番茄/TomatoBites</footer>
 
   </div>
-
-  <!-- 奖池设置弹窗 -->
-  <dialog class="rounded-xl p-0" id="poolDialog">
-    <form class="min-w-[320px] sm:min-w-[520px]" method="dialog">
-      <div class="p-3 border-b font-semibold">设置奖池（类内均匀）</div>
-      <div class="p-3 grid sm:grid-cols-3 gap-3 text-sm">
-        <label class="block"><span class="block mb-1">A 赏（每行一个）</span><textarea class="w-full border rounded px-2 py-1"
-            id="poolA" rows="8"></textarea></label>
-        <label class="block"><span class="block mb-1">B 赏（每行一个）</span><textarea class="w-full border rounded px-2 py-1"
-            id="poolB" rows="8"></textarea></label>
-        <label class="block"><span class="block mb-1">C 赏（每行一个）</span><textarea class="w-full border rounded px-2 py-1"
-            id="poolC" rows="8"></textarea></label>
-      </div>
-      <div class="p-3 flex justify-end gap-2 border-t">
-        <button class="border rounded px-3 py-2" value="cancel">取消</button>
-        <button class="border rounded px-3 py-2" id="poolSave">保存</button>
-      </div>
-    </form>
-  </dialog>
 
   <!-- 自定义提示弹窗 -->
   <div id="customAlert" class="fixed inset-0 bg-black/30 flex items-center justify-center z-50 hidden">
@@ -1716,6 +1723,75 @@
     const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
     const randomChoice = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
+    // 绑定返回一番赏按钮的点击事件
+    document.getElementById('btnBackToLottery').addEventListener('click', () => {
+      nav('lottery'); // 切换到“一番赏”页面
+    });
+
+    // 十连设置
+    document.getElementById('btnDraw10').addEventListener('click', () => {
+      const pool = getEnabledPool();
+      if (!pool) {
+        showAlert('未启用任何奖池');
+        return;
+      }
+
+      if (state.points < 3000) {
+        showAlert('积分不足（需要 3000）');
+        return;
+      }
+
+      addPoints(-3000, 'LOTTERY_COST');
+      save();
+      document.getElementById('pointBadge').textContent = state.points;
+
+      const results = []; // 用于存储十次抽奖结果
+
+      for (let i = 0; i < 10; i++) {
+        const tier = drawTier();
+        const prize = pool[tier].length ? randomChoice(pool[tier]) : `${tier}类空奖`;
+        results.push({ tier, prize });
+
+        // 记录抽奖日志
+        state.lotteryLog.unshift({ ts: Date.now(), tier, prize });
+      }
+
+      save();
+
+      // 展示抽奖结果
+      showTenDrawResults(results);
+    });
+
+
+    // 展示十连结果
+    function showTenDrawResults(results) {
+      const alertBox = document.getElementById('customAlert');
+      const alertMsg = document.getElementById('customAlertMsg');
+
+      // 构建卡片样式的结果展示内容
+      const resultHtml = results
+        .map(
+          (r, index) =>
+            `<div class="border rounded-xl p-3 bg-white/90 shadow text-center flex flex-col items-center">
+          <div class="text-lg font-bold mb-2">${r.tier}赏</div>
+          <div class="text-sm text-slate-600">${r.prize}</div>
+        </div>`
+        )
+        .join('');
+
+      alertMsg.innerHTML = `
+    <div class="text-lg font-semibold mb-3">🎉 十连抽结果</div>
+    <div class="p-3 grid grid-cols-2 sm:grid-cols-5 gap-5">
+      ${resultHtml}
+    </div>
+  `;
+
+      alertBox.classList.remove('hidden');
+      document.getElementById('customAlertBtn').onclick = () => {
+        alertBox.classList.add('hidden');
+      };
+    }
+
     const SCORE_SRC = {
       POMO_BASE: '完成番茄+50',
       POMO_CONSEC: '连续完成奖励',
@@ -1735,9 +1811,10 @@
       dayMilestones: { date: '', hits: [] },
       currentConsec: 0,
       devUnlocked: false,
-      lottery: { A: ['稀有徽章', '限定皮肤', '吃顿大餐'], B: ['买本书', '看场电影', '双倍卡(1次)'], C: ['甜麻薯1个', '耍会儿手机', '贴纸'] },
+      lottery: { A: ['稀有吧唧', '限定皮肤', '吃顿大餐'], B: ['买本书', '看场电影', '喝什么好呢'], C: ['甜麻薯1个', '耍会儿手机', '散会步吧'] },
       lotteryLog: [],
       ledger: [], // {ts, delta, reason, meta}
+      pools: [], // 奖池设置
     };
 
     function load() { try { const raw = localStorage.getItem(LS_KEY); return raw ? { ...defaultState, ...JSON.parse(raw) } : defaultState } catch (e) { return defaultState } }
@@ -1752,6 +1829,20 @@
       state.currentConsec = 0;
       save(); // 保存状态
       updateConsecBadge(); // 更新显示
+      const lastview = localStorage.getItem('lastView') || 'home'; // 默认显示首页
+      nav(lastview); // 切换到上一次的页面
+      if (!state.pools || state.pools.length === 0) {
+        state.pools = [...DEFAULT_POOL];
+        save();
+      }
+
+      // 初始化奖池标题
+      updateCurrentPoolTitle();
+
+      // 切换到上一次的页面
+      const lastView = localStorage.getItem('lastView') || 'home'; // 默认显示首页
+      nav(lastview);
+
     });
 
     function updateConsecBadge() {
@@ -1793,7 +1884,6 @@
 
     // 顶部与首页信息
     $('#pointBadge').textContent = state.points;
-    $('#quickPoints').textContent = state.points;
     $('#themeSelect').value = state.settings.theme;
     $('#soundToggle').checked = state.settings.sound;
     $('#year').textContent = new Date().getFullYear();
@@ -1812,8 +1902,11 @@
     applyTheme();
 
     // =============== 视图切换 ===============
-    const views = ['home', 'sign', 'lottery', 'notice', 'stats', 'dev', 'ledger', "help"];
-    function nav(to) { views.forEach(v => $('#view-' + v).classList.toggle('hidden', v !== to)); }
+    const views = ['home', 'sign', 'lottery', 'stats', 'dev', 'ledger', "help", "pool-settings"];
+    function nav(to) {
+      views.forEach(v => document.getElementById('view-' + v).classList.toggle('hidden', v !== to));
+      localStorage.setItem('lastView', to); // 保存当前页面到 localStorage
+    }
     document.querySelectorAll('[data-home]').forEach(b => b.addEventListener('click', () => nav('home')));
     document.querySelectorAll('[data-link]').forEach(a => a.addEventListener('click', (e) => { e.preventDefault(); const to = a.getAttribute('data-link'); nav(to); if (to === 'stats') { drawAllCharts(); } if (to === 'sign') { renderCalendar(); renderStreakStats(); } if (to === 'ledger') { buildLedgerFilterOptions(); renderLedgerPage(); } }));
 
@@ -2272,7 +2365,7 @@
       const day = todayKey(new Date()); if (state.sign.lastDate === day) { showAlert('今日已签到'); $('#btnSign').textContent = '✒ 今日已签'; return; }
       const y = todayKey(new Date(Date.now() - 24 * 3600 * 1000)); let next = state.sign.lastDate === y ? state.sign.streak + 1 : 1; next = Math.min(next, 30);
       if (!state.sign.history) state.sign.history = []; if (!state.sign.history.includes(day)) state.sign.history.push(day); state.sign = { lastDate: day, streak: next, totalDays: (state.sign.totalDays || 0) + 1, history: state.sign.history };
-      const reward = next * 10; addPoints(reward, 'SIGNIN', { streak: next }); beep.success(); save(); refreshSign(); $('#btnSign').textContent = '✒ 今日已签'; $('#pointBadge').textContent = state.points; $('#quickPoints').textContent = state.points; showAlert(`签到成功，奖励 ${reward} 分（连续 ${next} 天）`); renderStreakStats();
+      const reward = next * 10; addPoints(reward, 'SIGNIN', { streak: next }); beep.success(); save(); refreshSign(); $('#btnSign').textContent = '✒ 今日已签'; $('#pointBadge').textContent = state.points; showAlert(`签到成功，奖励 ${reward} 分（连续 ${next} 天）`); renderStreakStats();
     });
 
     // =============== 一番赏记录 ===============
@@ -2305,28 +2398,53 @@
 
     const tierProb = { A: 0.03, B: 0.085, C: 0.885 };
     function drawTier() { const r = Math.random(); if (r < tierProb.A) return 'A'; else if (r < tierProb.A + tierProb.B) return 'B'; return 'C'; }
-    $('#btnDraw').addEventListener('click', () => {
-      if (state.points < 300) { showAlert('积分不足（需要 300）'); return; }
-      addPoints(-300, 'LOTTERY_COST'); save(); $('#pointBadge').textContent = state.points; $('#quickPoints').textContent = state.points;
-      beep.lottery();
-      const wrap = $('#flipWrap'); wrap.classList.remove('rotate-y-180'); $('#lotteryResult').classList.add('hidden');
+    function getEnabledPool() {
+      const enabledPool = state.pools.find((pool) => pool.enabled);
+      if (!enabledPool && state.pools.length > 0) {
+        state.pools[0].enabled = true; // 默认启用第一个奖池
+        save();
+        return state.pools[0];
+      }
+      return enabledPool;
+    }
+
+    document.getElementById('btnDraw').addEventListener('click', () => {
+      const pool = getEnabledPool();
+      if (!pool) {
+        showAlert('未启用任何奖池');
+        return;
+      }
+
+      if (state.points < 300) {
+        showAlert('积分不足（需要 300）');
+        return;
+      }
+
+      addPoints(-300, 'LOTTERY_COST');
+      save();
+      document.getElementById('pointBadge').textContent = state.points;
+
+      const wrap = document.getElementById('flipWrap');
+      wrap.classList.remove('rotate-y-180');
+      document.getElementById('lotteryResult').classList.add('hidden');
+
       setTimeout(() => wrap.classList.add('rotate-y-180'), 100);
       setTimeout(() => {
-        const tier = drawTier(); const pool = state.lottery[tier]; const prize = pool.length ? randomChoice(pool) : `${tier}类空奖`;
-        $('#lotteryPrize').textContent = prize; $('#lotteryTier').textContent = tier + '赏'; $('#lotteryResult').classList.remove('hidden');
-        // 记录抽奖日志（不涉及积分）
-        try {
-          if (!Array.isArray(state.lotteryLog)) state.lotteryLog = [];
-          state.lotteryLog.unshift({ ts: Date.now(), tier, prize });
-        } catch (e) { }
+        const tier = drawTier();
+        const prize = pool[tier].length ? randomChoice(pool[tier]) : `${tier}类空奖`;
+        document.getElementById('lotteryPrize').textContent = prize;
+        document.getElementById('lotteryTier').textContent = tier + '赏';
+        document.getElementById('lotteryResult').classList.remove('hidden');
+
+        // 记录抽奖日志
+        state.lotteryLog.unshift({ ts: Date.now(), tier, prize });
         save();
       }, 900);
     });
-
     // 奖池设置
-    const dlg = document.getElementById('poolDialog');
-    $('#btnPool').addEventListener('click', () => { $('#poolA').value = state.lottery.A.join('\n'); $('#poolB').value = state.lottery.B.join('\n'); $('#poolC').value = state.lottery.C.join('\n'); dlg.showModal(); });
-    $('#poolSave').addEventListener('click', (e) => { e.preventDefault(); state.lottery = { A: $('#poolA').value.split(/\n+/).filter(Boolean), B: $('#poolB').value.split(/\n+/).filter(Boolean), C: $('#poolC').value.split(/\n+/).filter(Boolean) }; save(); dlg.close(); });
+    //const dlg = document.getElementById('poolDialog');
+    //$('#btnPool').addEventListener('click', () => { $('#poolA').value = state.lottery.A.join('\n'); $('#poolB').value = state.lottery.B.join('\n'); $('#poolC').value = state.lottery.C.join('\n'); dlg.showModal(); });
+    //$('#poolSave').addEventListener('click', (e) => { e.preventDefault(); state.lottery = { A: $('#poolA').value.split(/\n+/).filter(Boolean), B: $('#poolB').value.split(/\n+/).filter(Boolean), C: $('#poolC').value.split(/\n+/).filter(Boolean) }; save(); dlg.close(); });
 
     // =============== 统计（Chart.js） ===============
     let charts = {};
@@ -2392,7 +2510,6 @@
         updateQuickUI(); // 更新 UI
 
         $('#pointBadge').textContent = state.points;
-        $('#quickPoints').textContent = state.points;
 
         showAlert('已应用');
       });
@@ -2402,10 +2519,150 @@
       showConfirm('确定清空所有本地数据？此操作不可恢复。', function (ok) {
         if (ok) {
           localStorage.removeItem(LS_KEY);
+          state = { ...defaultState, pools: DEFAULT_POOL }; // 恢复默认奖池
+          $('#pointBadge').textContent = state.points;
+          save();
+          
           location.reload();
+
+          nav('home')
         }
       });
     });
+
+
+    const DEFAULT_POOL = [
+      {
+        name: '默认奖池',
+        enabled: true,
+        A: ['海景吧唧', '限定皮肤', '吃顿大餐'],
+        B: ['买本书', '看场电影', '喝什么好呢'],
+        C: ['甜麻薯1个', '耍10分钟手机', '散个步吧'],
+      },
+    ];
+
+    // 渲染奖池设置页面
+    function renderPoolSettings() {
+      const poolList = document.getElementById('poolList');
+      poolList.innerHTML = '';
+
+      state.pools.forEach((pool, index) => {
+        const poolDiv = document.createElement('div');
+        poolDiv.className = 'border rounded p-4 bg-white/70';
+
+        poolDiv.innerHTML = `
+      <div class="flex justify-between items-center mb-3">
+        <input type="text" class="border rounded px-2 py-1 flex-1" value="${pool.name}" placeholder="奖池名称" data-index="${index}" />
+        <label class="flex items-center gap-2 ml-4">
+          <input type="radio" name="enabledPool" ${pool.enabled ? 'checked' : ''} data-index="${index}" />
+          启用该奖池
+        </label>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-3">
+        <label class="block">
+          <span class="block mb-1">A 赏</span>
+          <textarea class="w-full border rounded px-2 py-1" rows="4" data-type="A" data-index="${index}">${pool.A.join('\n')}</textarea>
+        </label>
+        <label class="block">
+          <span class="block mb-1">B 赏</span>
+          <textarea class="w-full border rounded px-2 py-1" rows="4" data-type="B" data-index="${index}">${pool.B.join('\n')}</textarea>
+        </label>
+        <label class="block">
+          <span class="block mb-1">C 赏</span>
+          <textarea class="w-full border rounded px-2 py-1" rows="4" data-type="C" data-index="${index}">${pool.C.join('\n')}</textarea>
+        </label>
+      </div>
+      <div class="flex justify-center items-center">
+        <button class="border rounded px-3 py-2 mt-3 text-red-600" data-delete="${index}">🗑️ 删除奖池</button>
+      </div>
+    `;
+
+        poolList.appendChild(poolDiv);
+      });
+    }
+
+    // 添加奖池
+    document.getElementById('addPoolBtn').addEventListener('click', () => {
+      state.pools.push({
+        name: `奖池 ${state.pools.length + 1}`,
+        enabled: false,
+        A: [],
+        B: [],
+        C: [],
+      });
+      save();
+      renderPoolSettings();
+    });
+
+    // 更新奖池数据
+    document.getElementById('poolList').addEventListener('input', (e) => {
+      const index = e.target.dataset.index;
+      if (e.target.type === 'text') {
+        state.pools[index].name = e.target.value;
+      } else if (e.target.tagName === 'TEXTAREA') {
+        const type = e.target.dataset.type;
+        state.pools[index][type] = e.target.value.split('\n').filter(Boolean);
+      }
+      save();
+    });
+
+    // 启用奖池
+    document.getElementById('poolList').addEventListener('change', (e) => {
+      if (e.target.name === 'enabledPool') {
+        state.pools.forEach((pool, i) => {
+          pool.enabled = i === parseInt(e.target.dataset.index);
+        });
+        save();
+      }
+    });
+
+    // 删除奖池
+    document.getElementById('poolList').addEventListener('click', (e) => {
+      if (e.target.dataset.delete !== undefined) {
+        const index = parseInt(e.target.dataset.delete);
+        state.pools.splice(index, 1);
+        save();
+        renderPoolSettings();
+      }
+    });
+
+    // 进入奖池设置页面
+    document.getElementById('btnPool').addEventListener('click', () => {
+      renderPoolSettings(); // 渲染奖池设置页面
+      nav('pool-settings'); // 切换到奖池设置页面
+    });
+
+    let currentPoolIndex = state.pools.findIndex(pool => pool.enabled) || 0;
+
+    // 更新当前奖池标题
+    function updateCurrentPoolTitle() {
+      const titleEl = document.getElementById('currentPoolTitle');
+      if (titleEl) {
+        const pool = state.pools[currentPoolIndex];
+        titleEl.textContent = `当前奖池：${pool ? pool.name : '无'}`;
+      }
+    }
+
+    // 切换到上一个奖池
+    document.getElementById('prevPoolBtn').addEventListener('click', () => {
+      if (state.pools.length === 0) return;
+      currentPoolIndex = (currentPoolIndex - 1 + state.pools.length) % state.pools.length;
+      state.pools.forEach((pool, i) => pool.enabled = i === currentPoolIndex);
+      save();
+      updateCurrentPoolTitle();
+    });
+
+    // 切换到下一个奖池
+    document.getElementById('nextPoolBtn').addEventListener('click', () => {
+      if (state.pools.length === 0) return;
+      currentPoolIndex = (currentPoolIndex + 1) % state.pools.length;
+      state.pools.forEach((pool, i) => pool.enabled = i === currentPoolIndex);
+      save();
+      updateCurrentPoolTitle();
+    });
+
+    // 初始化奖池标题
+    updateCurrentPoolTitle();
 
     // =============== 自测（控制台） ===============
     console.assert(consecExtraDelta(0) === 0, 'T1'); console.assert(consecExtraDelta(1) === 5, 'T2'); console.assert(consecExtraDelta(2) === 15, 'T3');
