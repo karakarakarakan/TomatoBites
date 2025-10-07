@@ -1,0 +1,2476 @@
+<!DOCTYPE html>
+<!-- saved from url=(0183)file:///C:/Users/86186/Downloads/%E7%95%AA%E8%8C%84%E5%B7%A5%E5%9D%8A_%E7%95%AA%E8%8C%84%E8%AE%A1%E6%97%B6%E5%99%A8%E5%BE%AA%E7%8E%AF%E8%BE%93%E5%85%A5%E5%8F%B3%E4%BE%A7%E7%89%88.html -->
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <title>🍅 请吃小番茄！</title>
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind config must be set after CDN loads -->
+  <!-- Chart.js for charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./🍅 请吃小番茄!_files/chart.js.下载"></script>
+  <style>
+    /* 3D 翻牌 */
+    .perspective {
+      perspective: 1200px;
+    }
+
+    .preserve-3d {
+      transform-style: preserve-3d;
+    }
+
+    .backface-hidden {
+      backface-visibility: hidden;
+    }
+
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card {
+      transition: transform 0.7s;
+    }
+
+    /* 简易签到日历样式 */
+    .cal-cell {
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 0.5rem;
+      padding: 0.35rem 0.25rem;
+      min-height: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cal-cell.muted {
+      opacity: 0.45;
+    }
+
+    .cal-cell .day {
+      font-weight: 600;
+    }
+
+    .cal-cell .mark {
+      font-size: 1rem;
+      line-height: 1;
+      margin-top: 0.1rem;
+    }
+
+    /* 美化积分记录表格 */
+    #ledgerList>div {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    #ledgerList>div:last-child {
+      border-bottom: none;
+    }
+
+    /* 一番赏记录表格样式 */
+    #lotteryLogList>div {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    #lotteryLogList>div:last-child {
+      border-bottom: none;
+    }
+  </style>
+  <style>
+    *,
+    ::before,
+    ::after {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia: ;
+      --tw-contain-size: ;
+      --tw-contain-layout: ;
+      --tw-contain-paint: ;
+      --tw-contain-style:
+    }
+
+    ::backdrop {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia: ;
+      --tw-contain-size: ;
+      --tw-contain-layout: ;
+      --tw-contain-paint: ;
+      --tw-contain-style:
+    }
+
+    /* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: #e5e7eb
+    }
+
+    ::after,
+    ::before {
+      --tw-content: ''
+    }
+
+    :host,
+    html {
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -moz-tab-size: 4;
+      tab-size: 4;
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    body {
+      margin: 0;
+      line-height: inherit
+    }
+
+    hr {
+      height: 0;
+      color: inherit;
+      border-top-width: 1px
+    }
+
+    abbr:where([title]) {
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit
+    }
+
+    b,
+    strong {
+      font-weight: bolder
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      font-size: 1em
+    }
+
+    small {
+      font-size: 80%
+    }
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline
+    }
+
+    sub {
+      bottom: -.25em
+    }
+
+    sup {
+      top: -.5em
+    }
+
+    table {
+      text-indent: 0;
+      border-color: inherit;
+      border-collapse: collapse
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-feature-settings: inherit;
+      font-variation-settings: inherit;
+      font-size: 100%;
+      font-weight: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      color: inherit;
+      margin: 0;
+      padding: 0
+    }
+
+    button,
+    select {
+      text-transform: none
+    }
+
+    button,
+    input:where([type=button]),
+    input:where([type=reset]),
+    input:where([type=submit]) {
+      -webkit-appearance: button;
+      appearance: button;
+      background-color: transparent;
+      background-image: none
+    }
+
+    :-moz-focusring {
+      outline: auto
+    }
+
+    :-moz-ui-invalid {
+      box-shadow: none
+    }
+
+    progress {
+      vertical-align: baseline
+    }
+
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      height: auto
+    }
+
+    [type=search] {
+      -webkit-appearance: textfield;
+      appearance: textfield;
+      outline-offset: -2px
+    }
+
+    ::-webkit-search-decoration {
+      -webkit-appearance: none
+    }
+
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit
+    }
+
+    summary {
+      display: list-item
+    }
+
+    blockquote,
+    dd,
+    dl,
+    figure,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    p,
+    pre {
+      margin: 0
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0
+    }
+
+    legend {
+      padding: 0
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+
+    dialog {
+      padding: 0
+    }
+
+    textarea {
+      resize: vertical
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      opacity: 1;
+      color: #9ca3af
+    }
+
+    [role=button],
+    button {
+      cursor: pointer
+    }
+
+    :disabled {
+      cursor: default
+    }
+
+    audio,
+    canvas,
+    embed,
+    iframe,
+    img,
+    object,
+    svg,
+    video {
+      display: block;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto
+    }
+
+    [hidden]:where(:not([hidden=until-found])) {
+      display: none
+    }
+
+    .absolute {
+      position: absolute
+    }
+
+    .relative {
+      position: relative
+    }
+
+    .inset-0 {
+      inset: 0px
+    }
+
+    .inset-3 {
+      inset: 0.75rem
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .mb-1 {
+      margin-bottom: 0.25rem
+    }
+
+    .mb-2 {
+      margin-bottom: 0.5rem
+    }
+
+    .mb-3 {
+      margin-bottom: 0.75rem
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem
+    }
+
+    .mt-1 {
+      margin-top: 0.25rem
+    }
+
+    .mt-10 {
+      margin-top: 2.5rem
+    }
+
+    .mt-2 {
+      margin-top: 0.5rem
+    }
+
+    .mt-3 {
+      margin-top: 0.75rem
+    }
+
+    .block {
+      display: block
+    }
+
+    .flex {
+      display: flex
+    }
+
+    .inline-flex {
+      display: inline-flex
+    }
+
+    .grid {
+      display: grid
+    }
+
+    .hidden {
+      display: none
+    }
+
+    .h-32 {
+      height: 8rem
+    }
+
+    .h-36 {
+      height: 9rem
+    }
+
+    .h-48 {
+      height: 12rem
+    }
+
+    .h-\[260px\] {
+      height: 260px
+    }
+
+    .min-h-screen {
+      min-height: 100vh
+    }
+
+    .w-32 {
+      width: 8rem
+    }
+
+    .w-64 {
+      width: 16rem
+    }
+
+    .w-full {
+      width: 100%
+    }
+
+    .min-w-\[320px\] {
+      min-width: 320px
+    }
+
+    .max-w-6xl {
+      max-width: 72rem
+    }
+
+    .flex-1 {
+      flex: 1 1 0%
+    }
+
+    .cursor-pointer {
+      cursor: pointer
+    }
+
+    .select-none {
+      -webkit-user-select: none;
+      user-select: none
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr))
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .grid-cols-7 {
+      grid-template-columns: repeat(7, minmax(0, 1fr))
+    }
+
+    .flex-wrap {
+      flex-wrap: wrap
+    }
+
+    .place-items-center {
+      place-items: center
+    }
+
+    .items-end {
+      align-items: flex-end
+    }
+
+    .items-center {
+      align-items: center
+    }
+
+    .justify-start {
+      justify-content: flex-start
+    }
+
+    .justify-end {
+      justify-content: flex-end
+    }
+
+    .justify-center {
+      justify-content: center
+    }
+
+    .justify-between {
+      justify-content: space-between
+    }
+
+    .gap-1 {
+      gap: 0.25rem
+    }
+
+    .gap-2 {
+      gap: 0.5rem
+    }
+
+    .gap-3 {
+      gap: 0.75rem
+    }
+
+    .gap-4 {
+      gap: 1rem
+    }
+
+    .space-y-1> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.25rem * var(--tw-space-y-reverse))
+    }
+
+    .space-y-2> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+    }
+
+    .space-y-3> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.75rem * var(--tw-space-y-reverse))
+    }
+
+    .space-y-4> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(1rem * var(--tw-space-y-reverse))
+    }
+
+    .divide-y> :not([hidden])~ :not([hidden]) {
+      --tw-divide-y-reverse: 0;
+      border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+      border-bottom-width: calc(1px * var(--tw-divide-y-reverse))
+    }
+
+    .overflow-hidden {
+      overflow: hidden
+    }
+
+    .rounded {
+      border-radius: 0.25rem
+    }
+
+    .rounded-2xl {
+      border-radius: 1rem
+    }
+
+    .rounded-full {
+      border-radius: 9999px
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem
+    }
+
+    .rounded-t {
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem
+    }
+
+    .border {
+      border-width: 1px
+    }
+
+    .border-b {
+      border-bottom-width: 1px
+    }
+
+    .border-t {
+      border-top-width: 1px
+    }
+
+    .bg-amber-50 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 251 235 / var(--tw-bg-opacity, 1))
+    }
+
+    .bg-slate-200 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1))
+    }
+
+    .bg-white\/70 {
+      background-color: rgb(255 255 255 / 0.7)
+    }
+
+    .bg-white\/80 {
+      background-color: rgb(255 255 255 / 0.8)
+    }
+
+    .bg-white\/90 {
+      background-color: rgb(255 255 255 / 0.9)
+    }
+
+    .bg-gradient-to-br {
+      background-image: linear-gradient(to bottom right, var(--tw-gradient-stops))
+    }
+
+    .from-amber-50 {
+      --tw-gradient-from: #fffbeb var(--tw-gradient-from-position);
+      --tw-gradient-to: rgb(255 251 235 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+    }
+
+    .from-cyan-50 {
+      --tw-gradient-from: #ecfeff var(--tw-gradient-from-position);
+      --tw-gradient-to: rgb(236 254 255 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+    }
+
+    .from-green-50 {
+      --tw-gradient-from: #f0fdf4 var(--tw-gradient-from-position);
+      --tw-gradient-to: rgb(240 253 244 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+    }
+
+    .from-rose-100 {
+      --tw-gradient-from: #ffe4e6 var(--tw-gradient-from-position);
+      --tw-gradient-to: rgb(255 228 230 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+    }
+
+    .from-rose-50 {
+      --tw-gradient-from: #fff1f2 var(--tw-gradient-from-position);
+      --tw-gradient-to: rgb(255 241 242 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+    }
+
+    .from-violet-50 {
+      --tw-gradient-from: #f5f3ff var(--tw-gradient-from-position);
+      --tw-gradient-to: rgb(245 243 255 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+    }
+
+    .from-white {
+      --tw-gradient-from: #fff var(--tw-gradient-from-position);
+      --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+    }
+
+    .via-orange-100 {
+      --tw-gradient-to: rgb(255 237 213 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), #ffedd5 var(--tw-gradient-via-position), var(--tw-gradient-to)
+    }
+
+    .via-sky-50 {
+      --tw-gradient-to: rgb(240 249 255 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), #f0f9ff var(--tw-gradient-via-position), var(--tw-gradient-to)
+    }
+
+    .to-amber-100 {
+      --tw-gradient-to: #fef3c7 var(--tw-gradient-to-position)
+    }
+
+    .to-emerald-50 {
+      --tw-gradient-to: #ecfdf5 var(--tw-gradient-to-position)
+    }
+
+    .to-fuchsia-50 {
+      --tw-gradient-to: #fdf4ff var(--tw-gradient-to-position)
+    }
+
+    .to-lime-50 {
+      --tw-gradient-to: #f7fee7 var(--tw-gradient-to-position)
+    }
+
+    .to-sky-50 {
+      --tw-gradient-to: #f0f9ff var(--tw-gradient-to-position)
+    }
+
+    .to-slate-50 {
+      --tw-gradient-to: #f8fafc var(--tw-gradient-to-position)
+    }
+
+    .p-0 {
+      padding: 0px
+    }
+
+    .p-3 {
+      padding: 0.75rem
+    }
+
+    .p-4 {
+      padding: 1rem
+    }
+
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem
+    }
+
+    .px-3 {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem
+    }
+
+    .py-1 {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem
+    }
+
+    .text-center {
+      text-align: center
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem
+    }
+
+    .text-3xl {
+      font-size: 1.875rem;
+      line-height: 2.25rem
+    }
+
+    .text-base {
+      font-size: 1rem;
+      line-height: 1.5rem
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem
+    }
+
+    .font-bold {
+      font-weight: 700
+    }
+
+    .font-extrabold {
+      font-weight: 800
+    }
+
+    .font-medium {
+      font-weight: 500
+    }
+
+    .font-semibold {
+      font-weight: 600
+    }
+
+    .tabular-nums {
+      --tw-numeric-spacing: tabular-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)
+    }
+
+    .text-red-600 {
+      --tw-text-opacity: 1;
+      color: rgb(220 38 38 / var(--tw-text-opacity, 1))
+    }
+
+    .text-slate-500 {
+      --tw-text-opacity: 1;
+      color: rgb(100 116 139 / var(--tw-text-opacity, 1))
+    }
+
+    .text-slate-600 {
+      --tw-text-opacity: 1;
+      color: rgb(71 85 105 / var(--tw-text-opacity, 1))
+    }
+
+    .text-slate-700 {
+      --tw-text-opacity: 1;
+      color: rgb(51 65 85 / var(--tw-text-opacity, 1))
+    }
+
+    .text-slate-800 {
+      --tw-text-opacity: 1;
+      color: rgb(30 41 59 / var(--tw-text-opacity, 1))
+    }
+
+    .shadow {
+      --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+    }
+
+    .transition {
+      transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms
+    }
+
+    .hover\:shadow-xl:hover {
+      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+    }
+
+    @media (min-width: 640px) {
+      .sm\:flex {
+        display: flex
+      }
+
+      .sm\:h-56 {
+        height: 14rem
+      }
+
+      .sm\:w-56 {
+        width: 14rem
+      }
+
+      .sm\:min-w-\[520px\] {
+        min-width: 520px
+      }
+
+      .sm\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .sm\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+      }
+
+      .sm\:justify-end {
+        justify-content: flex-end
+      }
+
+      .sm\:p-4 {
+        padding: 1rem
+      }
+
+      .sm\:p-5 {
+        padding: 1.25rem
+      }
+
+      .sm\:p-6 {
+        padding: 1.5rem
+      }
+
+      .sm\:text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem
+      }
+
+      .sm\:text-5xl {
+        font-size: 3rem;
+        line-height: 1
+      }
+
+      .sm\:text-base {
+        font-size: 1rem;
+        line-height: 1.5rem
+      }
+
+      .sm\:text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem
+      }
+
+      .sm\:text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem
+      }
+    }
+
+    @media (min-width: 768px) {
+      .md\:col-span-2 {
+        grid-column: span 2 / span 2
+      }
+
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+    }
+  </style>
+  <style type="text/css">
+    [mt_node=trans_loading]::after {
+      content: '';
+      vertical-align: middle !important;
+      width: 1em !important;
+      height: 1em !important;
+      display: inline-block !important;
+      margin: 0 4px !important;
+      border: 2px rgba(0, 0, 0, 0.25) solid !important;
+      border-top: 2px rgba(0, 0, 0, 1) solid !important;
+      border-radius: 50% !important;
+      padding: 0 !important;
+      -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+      animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+    }
+
+    @keyframes immersive-translate-loading-animation {
+      from {
+        transform: rotate(0deg, 0deg, 0deg);
+      }
+
+      to {
+        transform: rotate(359deg, 0deg, 0deg);
+      }
+    }
+  </style>
+  <style type="text/css">
+    [mt_node^=trans] {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br text-slate-800 from-rose-50 via-sky-50 to-emerald-50">
+
+
+  <div class="max-w-6xl mx-auto p-3 sm:p-6">
+
+    <!-- 标题 -->
+    <header class="flex items-center justify-between mb-4">
+      <h1 class="text-2xl sm:text-3xl font-extrabold select-none cursor-pointer" id="appTitle">
+        🍅 请吃小番茄！</h1>
+      <div class="flex items-center gap-2 text-sm">
+        <span class="inline-flex items-center gap-1 border rounded px-2 py-1"><span>🪙</span><span
+            id="pointBadge">0</span></span>
+
+        <!-- 设置 -->
+
+        <button class="items-center gap-1 border rounded px-2 py-1 inline-flex" id="devBtn">
+          ⚙ 设置</button>
+      </div>
+    </header>
+
+    <!-- 首页 -->
+    <main class="hiiden space-y-4" id="view-home">
+
+      <!-- 番茄闹钟 -->
+      <section
+        class="overflow-hidden border rounded-xl shadow bg-gradient-to-br from-rose-100 via-orange-100 to-amber-100">
+        <div class="p-3 sm:p-4 border-b grid grid-cols-2 gap-3 items-center justify-between sm:grid">
+          <div class="font-semibold mb-1 sm:text-lg">⏱️ 番茄闹钟</div>
+          <div class="font-semibold mb-1 sm:text-lg justify-self-end border rounded" data-link="help">❓ 帮助</div>
+        </div>
+        <div class="p-3 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+          <div class="flex items-center justify-center">
+            <div class="relative w-52 h-52 sm:w-56 sm:h-56">
+              <div class="absolute inset-0 rounded-full" id="quickRing"
+                style="background:conic-gradient(#fb7185 0deg, rgba(255,255,255,0.6) 0deg)"></div>
+              <div class="absolute inset-3 rounded-full bg-white/80 shadow flex items-center justify-center border">
+                <div class="text-center">
+                  <div class="text-4xl sm:text-5xl font-extrabold tabular-nums" id="quickClock">25:00</div>
+                  <div class="mt-1 text-xs sm:text-sm" id="quickPhase">专注中 🔥</div>
+                  <div class="mt-1 text-xs sm:text-sm" id="quickLoopsStatus">循环：0/4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-3 text-sm sm:text-base ">
+            <!-- 番茄闹钟设置 -->
+            <div class="grid grid-cols-3 gap-3">
+              <label class="block">
+                <span class="block mb-2 text-cente">⏳ 工作/min</span>
+                <input class="w-full border rounded px-2 py-1" id="quickWork" min="0.1" type="number" value="25">
+              </label>
+              <label class="block">
+                <span class="block mb-2 text-cente">☕ 休息/min</span>
+                <input class="w-full border rounded px-2 py-1" id="quickBreak" min="0.1" type="number" value="5">
+              </label>
+              <label class="block">
+                <span class="block mb-2 text-center">🔁 循环次数</span>
+                <input class="w-full border rounded px-2 py-1" id="quickLoops" min="1" type="number" value="4"></label>
+            </div>
+
+            <!-- 完成显示 -->
+
+            <div
+              class="grid grid-cols-2 gap-4 sm:p-4 gird grid-cols-2 flex-wrap items-center gap-2 text-sm sm:text-base">
+              <div class="inline-flex border items-center justify-center rounded px-2 py-1" id="todayCount">今日已完成：0
+              </div>
+              <div class="inline-flex border items-center justify-center rounded px-2 py-1" id="consecBadge">当前番茄钟连续：0
+              </div>
+            </div>
+
+            <!-- 下次获得 -->
+            <div class="block">
+              <span class="bg-white/70 w-full inline-flex flex-col items-center border rounded px-2 py-1">
+                <span class="mb-2 ">🪙 下次获得：</span>
+                <span id="quickPoints">0</span>
+              </span>
+            </div>
+
+            <div class="flex flex-wrap grid grid-cols-2 gap-2">
+              <button class="border rounded px-3 py-2 " id="quickStart">▶️ 开始</button>
+              <button class="border rounded px-3 py-2 hidden" id="quickPause">⏸️ 暂停</button>
+              <button class="border rounded px-3 py-2" id="quickReset">⏮️ 重置</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 其他模块 -->
+      <section class="grid gap-4 grid-cols-2 sm:grid-cols-1">
+
+        <a class="block border rounded-xl hover:shadow-xl transition bg-gradient-to-br from-amber-50 to-lime-50"
+          data-link="sign">
+          <div class="px-4 py-3">
+            <div class="py-2 border-b mb-1">
+              <div class="font-semibold sm:text-lg">📅 签到</div>
+            </div>
+            <p class="py-2 text-sm">每日签到，连续越多奖励越高</p>
+          </div>
+        </a>
+
+        <a class="block border rounded-xl hover:shadow-xl transition bg-gradient-to-br from-cyan-50 to-sky-50"
+          data-link="lottery">
+          <div class="px-4 py-3">
+            <div class="py-2 border-b mb-1">
+              <div class="font-semibold sm:text-lg">🎰 一番赏</div>
+            </div>
+            <p class="py-2 text-sm">消耗 300 🪙，可自定义</p>
+          </div>
+        </a>
+
+        <a class="block border rounded-xl hover:shadow-xl transition bg-gradient-to-br from-violet-50 to-fuchsia-50"
+          data-link="stats">
+          <div class="px-4 py-3">
+            <div class="py-2 border-b mb-1">
+              <div class="font-semibold sm:text-lg">📈 统计</div>
+            </div>
+            <p class="py-2 text-sm">按小时/周/月查看完成量</p>
+          </div>
+        </a>
+
+        <a class="block border rounded-xl hover:shadow-xl transition bg-gradient-to-br from-green-50 to-emerald-50"
+          data-link="ledger">
+          <div class="px-4 py-3">
+            <div class="py-2 border-b mb-1">
+              <div class="font-semibold sm:text-lg">📒 积分记录</div>
+            </div>
+            <p class="py-2 text-sm">查看积分收支历史</p>
+          </div>
+        </a>
+
+      </section>
+
+
+
+    </main>
+
+    <!-- 帮助页 -->
+    <section class="hidden" id="view-help">
+      <div class="mb-3">
+        <button class="border rounded px-3 py-2" data-home="">🏠 返回首页</button>
+      </div>
+      <div class="border rounded-xl">
+        <div class="p-3 border-b font-semibold">❓ 帮助</div>
+        <div class="p-4 text-sm space-y-4">
+          <div>
+            <h2 class="font-semibold mb-2">💡 本网站功能</h2>
+            <p>基于一番赏抽奖系统的番茄闹钟激励学习</p>
+          </div>
+          <div>
+            <h2 class="font-semibold mb-2">💡 获得🪙的方式？</h2>
+            <p>积分可以通过完成番茄钟和签到获得，并且都有连续奖励机制。</p>
+            <h3 class="font-semibold mb-1">番茄闹钟的奖励机制如下：</h3>
+            <p>①每完成一个闹钟，奖励50积分，连续完成n个闹钟则额外奖励(n-1)^2*5个积分；</p>
+            <p>②每完成一个闹钟，有5%的概率额外奖励100，有10%的概率奖励10；</p>
+            <p>③当天完完成闹钟总数为i，i=3时额外奖励25，i=6时额外奖励75，i=8时而外奖励100。</p>
+          </div>
+          <div>
+            <h2 class="font-semibold mb-2">💡如何抽奖？</h2>
+            <p>进入“一番赏”页面，消耗 300 积分即可进行抽奖。</p>
+          </div>
+          <div>
+            <h2 class="font-semibold mb-2">💡其他问题/建议</h2>
+            <p>如有其他问题/建议，请联系开发者。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 签到页 -->
+    <section class="hidden" id="view-sign">
+      <div class="mb-3"><button class="border rounded px-3 py-2" data-home="">🏠 返回首页</button></div>
+      <div class="border rounded-xl">
+        <div class="p-3 border-b font-semibold">📅 签到系统</div>
+        <div class="p-4 space-y-3">
+
+          <div class="flex gap-2 items-center grid flex-wrap text-sm">
+            <span class="inline-flex items-center border rounded px-2 py-1" id="signLast">上次签到：—</span>
+            <span class="inline-flex items-center border rounded px-2 py-1" id="signStreak">连续：0 天（上限 30）</span>
+            <span class="inline-flex items-center border rounded px-2 py-1" id="signTotal">累计签到：0 天</span>
+          </div>
+
+          <button class="border rounded px-2 py-2" id="btnSign">✒ 今日签到</button>
+
+          <div class="border rounded p-3">
+            <div class="font-semibold mb-2">规则</div>
+            <li class="text-sm text-slate-600 mb-1">每天签到1次，获得 <b>10</b> 金币</li>
+            <li class="text-sm text-slate-600">若连续 j 天则获得 <b>jx10 </b> 金币（j上限30）</li>
+          </div>
+
+          <div class="border rounded p-3 mt-3">
+            <div class="flex items-center justify-between mb-2">
+              <button class="border rounded px-2 py-1 text-sm" id="calPrev">← 上月</button>
+              <div class="font-semibold" id="calTitle">2025 年 10 月</div>
+              <button class="border rounded px-2 py-1 text-sm" id="calNext">下月 →</button>
+            </div>
+            <div class="grid grid-cols-7 text-center text-xs text-slate-500">
+              <div class="py-1">日</div>
+              <div class="py-1">一</div>
+              <div class="py-1">二</div>
+              <div class="py-1">三</div>
+              <div class="py-1">四</div>
+              <div class="py-1">五</div>
+              <div class="py-1">六</div>
+            </div>
+            <div class="grid grid-cols-7 gap-1 text-sm" id="calGrid">
+              <div class="cal-cell muted">
+                <div class="day">28</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell muted">
+                <div class="day">29</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell muted">
+                <div class="day">30</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">1</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">2</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">3</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">4</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">5</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">6</div>
+                <div class="mark">•</div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">7</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">8</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">9</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">10</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">11</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">12</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">13</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">14</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">15</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">16</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">17</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">18</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">19</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">20</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">21</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">22</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">23</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">24</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">25</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">26</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">27</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">28</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">29</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">30</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell">
+                <div class="day">31</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell muted">
+                <div class="day">1</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell muted">
+                <div class="day">2</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell muted">
+                <div class="day">3</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell muted">
+                <div class="day">4</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell muted">
+                <div class="day">5</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell muted">
+                <div class="day">6</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell muted">
+                <div class="day">7</div>
+                <div class="mark"></div>
+              </div>
+              <div class="cal-cell muted">
+                <div class="day">8</div>
+                <div class="mark"></div>
+              </div>
+            </div>
+            <div class="text-xs text-slate-500 mt-2">✅ 表示当日已签到；可左右切换月份查看历史。</div>
+          </div>
+          <div class="border rounded p-3 mt-3">
+            <div class="font-semibold mb-1">连续统计</div>
+            <div class="text-sm space-y-1">
+              <div id="streakMax">最长连续：—</div>
+              <div class="text-slate-600 text-xs" id="streakBreaks">断点：无</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 抽奖页 -->
+    <section class="hidden" id="view-lottery">
+      <div class="mb-3"><button class="border rounded px-3 py-2" data-home="">🏠 返回首页</button></div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="border rounded-xl">
+          <div class="p-3 border-b font-semibold">🎰 一番赏</div>
+          <div class="p-4 space-y-4">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center border rounded px-2 py-1">300 🪙/次</span>
+              <span class="inline-flex items-center border rounded px-2 py-1">A 3% / B 8.5% / C88.5%</span>
+            </div>
+            <div
+              class="h-48 rounded-2xl bg-gradient-to-br from-white to-slate-50 border relative grid place-items-center perspective">
+              <div class="w-64 h-36 preserve-3d flip-card" id="flipWrap">
+                <div
+                  class="absolute inset-0 rounded-xl bg-white/90 border shadow grid place-items-center backface-hidden">
+                  <span class="text-2xl select-none">❓ 点击开始翻牌</span>
+                </div>
+                <div
+                  class="absolute inset-0 rounded-xl bg-amber-50 border shadow grid place-items-center backface-hidden rotate-y-180">
+                  <div class="text-center space-y-2 hidden" id="lotteryResult">
+                    <div class="text-sm text-slate-500">恭喜获得</div>
+                    <div class="text-2xl font-bold flex items-center justify-center gap-2">
+                      <span>👑</span>
+                      <span id="lotteryPrize">—</span>
+                      <span class="inline-flex items-center border rounded px-2 py-1" id="lotteryTier">A赏</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <button class="border rounded px-3 py-2" id="btnDraw">开始抽奖</button>
+              <button class="border rounded px-3 py-2" id="btnPool">设置奖池</button>
+              <button class="border rounded px-3 py-2" id="btnLotteryLog">📒 抽奖记录</button>
+            </div>
+            <div class="mt-3 border rounded-xl bg-white/70 p-3 hidden" id="lotteryLogPanel">
+              <div class="flex items-center justify-between mb-2">
+                <div class="font-semibold">抽奖记录</div><button class="border rounded px-2 py-1 text-sm"
+                  id="btnLotteryLogClose">关闭</button>
+              </div>
+              <div class="flex text-xs font-medium bg-slate-200 text-slate-700 rounded-t" id="lotteryLogHeader">
+                <div class="flex-1 py-2 text-center">时间</div>
+                <div class="flex-1 py-2 text-center">奖项</div>
+                <div class="flex-1 py-2 text-center">奖品</div>
+              </div>
+              <div class="text-sm" id="lotteryLogList"></div>
+            </div>
+          </div>
+        </div>
+        <div class="border rounded-xl">
+          <div class="p-3 border-b font-semibold">说明</div>
+          <div class="p-4 text-sm text-slate-600 space-y-2">
+            <li class="text-sm text-slate-600 mb-1">先按 A/B/C 概率决定类别，再在该类内等概率选择一个奖品。</li>
+            <li class="text-sm text-slate-600 mb-1">A赏3% ｜ B赏8.5% ｜ C赏88.5%。类内奖品可自定义，个数不限，概率自动均分。</li>
+            </li>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 公告页（规则） -->
+    <section class="hidden" id="view-notice">
+      <div class="mb-3"><button class="border rounded px-3 py-2" data-home="">🏠 返回首页</button></div>
+      <div class="border rounded-xl">
+        <div class="p-3 border-b font-semibold">📜 公告与规则</div>
+        <div class="p-4 text-sm">
+          <p>见首页与各功能页说明。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 统计页 -->
+    <section class="hidden" id="view-stats">
+      <div class="mb-3"><button class="border rounded px-3 py-2" data-home="">🏠 返回首页</button></div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="border rounded-xl">
+          <div class="p-3 border-b font-semibold">当日 · 按小时</div>
+          <div class="p-4 h-[260px]"><canvas id="chartHour"></canvas></div>
+        </div>
+        <div class="border rounded-xl">
+          <div class="p-3 border-b font-semibold">最近 7 天</div>
+          <div class="p-4 h-[260px]"><canvas id="chart7"></canvas></div>
+        </div>
+        <div class="border rounded-xl md:col-span-2">
+          <div class="p-3 border-b font-semibold">当月</div>
+          <div class="p-4 h-[260px]"><canvas id="chartMonth"></canvas></div>
+        </div>
+        <div class="border rounded-xl md:col-span-2">
+          <div class="p-3 border-b font-semibold">积分收支与来源</div>
+          <div class="p-4 h-[260px]"><canvas id="chartLedger"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- 积分收支历史 -->
+    <section class="hidden" id="view-ledger">
+      <div class="mb-3"><button class="border rounded px-3 py-2" data-home="">🏠 返回首页</button></div>
+      <div class="border rounded-xl bg-white/70 p-3">
+        <div class="flex items-center justify-between mb-2">
+          <div class="font-semibold">积分收支历史</div>
+        </div>
+        <div class="mb-2 grid grid-cols-1 sm:grid-cols-2 gap-2" id="ledgerToolbar">
+          <div class="flex flex-wrap items-center gap-2 text-sm"><label
+              class="flex items-center gap-2"><span>来源</span><select class="border rounded px-2 py-1" id="ledgerFilter">
+                <option value="ALL">全部</option>
+              </select></label><label class="flex items-center gap-2"><span>时间</span><select
+                class="border rounded px-2 py-1" id="timeRange">
+                <option value="ALL">全部</option>
+                <option value="LAST7">最近7天</option>
+                <option value="MONTH">本月</option>
+                <option value="CUSTOM">自定义</option>
+              </select></label>
+            <div class="hidden items-center gap-2" id="customDates"><input class="border rounded px-2 py-1"
+                id="dateFrom" type="date"><input class="border rounded px-2 py-1" id="dateTo" type="date"></div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 justify-start sm:justify-end text-sm"><label
+              class="flex items-center gap-2"><span>排序</span><select class="border rounded px-2 py-1" id="sortField">
+                <option value="time">时间</option>
+                <option value="delta">变动</option>
+              </select><select class="border rounded px-2 py-1" id="sortOrder">
+                <option value="desc">降序</option>
+                <option value="asc">升序</option>
+              </select></label><button class="border rounded px-3 py-2" id="exportCSV">⬇️ 导出 CSV</button></div>
+        </div>
+        <div class="mb-2 flex items-center gap-2 text-sm"><label
+            class="flex items-center gap-2"><span>来源筛选</span></label></div>
+        <div class="flex text-xs font-medium bg-slate-200 text-slate-700 rounded-t" id="ledgerHeader">
+          <div class="flex-1 text-center flex-1 py-2 text-center">时间</div>
+          <div class="flex-1 text-center flex-1 py-2 text-center">项目</div>
+          <div class="flex-1 text-center flex-1 py-2 text-center">变动</div>
+        </div>
+        <div class="text-sm divide-y" id="ledgerList"></div>
+        <div class="text-xs text-slate-500 mt-1">最近记录在上；正数为获得积分，负数为消耗。</div>
+      </div>
+    </section>
+
+    <!-- 管理面板 -->
+    <section class="hidden" id="view-dev">
+      <div class="mb-3"><button class="border rounded px-3 py-2" data-home="">🏠 返回首页</button></div>
+      <div class="border rounded-xl mb-5">
+        <div class="p-3 border-b font-semibold">⚙ 设置</div>
+
+        <!-- 颜色调整 -->
+        <div class="mb-5">
+          <div class="p-3 space-y-4">
+            <div class="border rounded p-4 bg-white/70">
+              <div class="py-1 font-semibold mb-2">📌 外观和声音</div>
+              <div class="border-b mb-4 "></div>
+              <div class="flex flex-col items-center gap-4">
+                <div class="border rounded p-2 flex items-center gap-4 mb-2">
+                  <span>🎨 主题</span>
+                  <select class="border rounded px-2 py-1" id="themeSelect">
+                    <option value="sunset">日落</option>
+                    <option value="ocean">海洋</option>
+                    <option value="aurora">极光</option>
+                    <option value="candy">糖果</option>
+                    <option value="mono">柔灰</option>
+                  </select>
+                </div>
+                <div class="border rounded p-2 flex items-center gap-11">
+                  <span>🔊 声音开关</span>
+                  <label class="flex items-center">
+                    <input checked="" id="soundToggle" type="checkbox">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-b mb-4"></div>
+
+
+
+
+          <!-- 开发者模式 -->
+          <div class="mb-5">
+            <div class="p-3 space-y-4">
+              <div class="border rounded p-4 bg-white/70">
+                <div class="py-1 font-semibold mb-2">🔧 开发者模式</div>
+                <div class="border-b mb-4"></div>
+                <div id="devStatus" class=" p-2 text-sm text-slate-600 flex items-center justify-between">
+                  <span id="devStatusText" class="text-red-600">🔒 未解锁开发者模式，以下功能不可使用。</span>
+                  <button id="devLockBtn" class="border rounded px-3 py-1 text-red-600 hidden">关闭开发者模式</button>
+                </div>
+                <div class="grid sm:grid-cols-3 gap-3 mt-4">
+                  <label class="block">
+                    <span class="block mb-1">调整积分（可正可负）</span>
+                    <input class="w-full border rounded px-2 py-1" id="devPts" type="number" value="0">
+                  </label>
+                  <label class="block">
+                    <span class="block mb-1">追加番茄完成记录数量</span>
+                    <input class="w-full border rounded px-2 py-1 " id="devPomos" min="0" type="number" value="0">
+                  </label>
+                  <div class="flex justify-center items-end">
+                    <button class="border rounded px-3 py-2" id="devApply">
+                      应用更改
+                    </button>
+                  </div>
+                </div>
+                <div class="border rounded p-3 text-sm text-slate-600 mt-4">
+                  <div class="font-semibold mb-2">⚠️ 警告</div>
+                  <p>开发者模式仅供测试与调试使用，滥用可能导致数据异常或不可预期的行为。</p>
+                  <p>请谨慎操作，建议在操作前备份数据。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-b mb-4"></div>
+
+          <!-- 关于 -->
+          <div class="mb-2">
+            <div class="p-3 space-y-2">
+              <div class="border rounded p-4 bg-white/70">
+                <div class="py-1 font-semibold mb-2">❓ 关于</div>
+                <div class="border-b mb-4"></div>
+                <div class="text-sm text-slate-600 space-y-2">
+                  <div>名称：请吃小番茄/TomatoBites</span></div>
+                  <div>版本：v1.0.0</span></div>
+                  <div>作者：空港</div>
+                  <div>
+                    配布：
+                    <a class="text-blue-600 underline" href="https://github.com/karakarakarakan/TomatoBites"
+                      target="_blank" rel="noopener">
+                      TomatoBites
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-b mb-4"></div>
+
+          <!-- 清空数据 -->
+          <div class="flex justify-center mt-3 mb-3 ">
+            <button class="border rounded px-3 py-2 text-red-600 " id="devClear">
+              🗑️ 清空本地数据
+            </button>
+          </div>
+
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="mt-10 text-center text-sm text-slate-500">© <span id="year">2025</span> 🍅请吃小番茄/TomatoBites</footer>
+
+  </div>
+
+  <!-- 奖池设置弹窗 -->
+  <dialog class="rounded-xl p-0" id="poolDialog">
+    <form class="min-w-[320px] sm:min-w-[520px]" method="dialog">
+      <div class="p-3 border-b font-semibold">设置奖池（类内均匀）</div>
+      <div class="p-3 grid sm:grid-cols-3 gap-3 text-sm">
+        <label class="block"><span class="block mb-1">A 赏（每行一个）</span><textarea class="w-full border rounded px-2 py-1"
+            id="poolA" rows="8"></textarea></label>
+        <label class="block"><span class="block mb-1">B 赏（每行一个）</span><textarea class="w-full border rounded px-2 py-1"
+            id="poolB" rows="8"></textarea></label>
+        <label class="block"><span class="block mb-1">C 赏（每行一个）</span><textarea class="w-full border rounded px-2 py-1"
+            id="poolC" rows="8"></textarea></label>
+      </div>
+      <div class="p-3 flex justify-end gap-2 border-t">
+        <button class="border rounded px-3 py-2" value="cancel">取消</button>
+        <button class="border rounded px-3 py-2" id="poolSave">保存</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- 自定义提示弹窗 -->
+  <div id="customAlert" class="fixed inset-0 bg-black/30 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-xl p-5 shadow text-center min-w-[200px]">
+      <div id="customAlertMsg" class="mb-3"></div>
+      <button id="customAlertBtn" class="border rounded px-4 py-2 bg-amber-50">确定</button>
+    </div>
+  </div>
+
+  <!-- 开发者模式密码弹窗 -->
+  <div id="devPwdDialog" class="fixed inset-0 bg-black/30 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-xl p-5 shadow text-center min-w-[220px]">
+      <div class="mb-3 font-semibold">请输入开发者模式密码</div>
+      <input id="devPwdInput" type="password" class="border rounded px-3 py-2 w-full mb-3" placeholder="密码">
+      <div class="flex justify-center gap-3">
+        <button id="devPwdCancel" class="border rounded px-4 py-2 bg-slate-200">取消</button>
+        <button id="devPwdOk" class="border rounded px-4 py-2 bg-amber-50">确定</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 脚本 -->
+  <script>
+    // =============== 工具与状态 ===============
+    const LS_KEY = 'pomox_app_state_html_v1';
+    const now = () => Date.now();
+    const todayKey = (d = new Date()) => d.toISOString().slice(0, 10);
+    const startOfDay = (ts) => { const d = new Date(ts); d.setHours(0, 0, 0, 0); return d.getTime(); }
+    const startOfMonth = (ts) => { const d = new Date(ts); d.setHours(0, 0, 0, 0); d.setDate(1); return d.getTime(); }
+    const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
+    const randomChoice = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+    const SCORE_SRC = {
+      POMO_BASE: '完成番茄+50',
+      POMO_CONSEC: '连续完成奖励',
+      POMO_RANDOM_100: '随机+100(5%)',
+      POMO_RANDOM_10: '随机+10(10%)',
+      DAILY_MILESTONE: '当日里程碑',
+      SIGNIN: '签到',
+      ADJUST: '开发者调整',
+      LOTTERY_COST: '抽奖消耗',
+    };
+
+    const defaultState = {
+      settings: { sound: true, volume: 0.7, theme: 'sunset' },
+      points: 0,
+      pomodoros: [], // { finishedAt }
+      sign: { lastDate: '', streak: 0, totalDays: 0, history: [] },
+      dayMilestones: { date: '', hits: [] },
+      currentConsec: 0,
+      devUnlocked: false,
+      lottery: { A: ['稀有徽章', '限定皮肤', '吃顿大餐'], B: ['买本书', '看场电影', '双倍卡(1次)'], C: ['甜麻薯1个', '耍会儿手机', '贴纸'] },
+      lotteryLog: [],
+      ledger: [], // {ts, delta, reason, meta}
+    };
+
+    function load() { try { const raw = localStorage.getItem(LS_KEY); return raw ? { ...defaultState, ...JSON.parse(raw) } : defaultState } catch (e) { return defaultState } }
+    function save() { localStorage.setItem(LS_KEY, JSON.stringify(state)); }
+
+    function addPoints(delta, reason, meta) { state.points += delta; state.ledger.unshift({ ts: now(), delta, reason, meta }); }
+    function consecExtraDelta(prev) { const newC = prev + 1; const prevSq = (prev - 1) >= 0 ? (prev - 1) * (prev - 1) : 0; return 5 * (((newC - 1) * (newC - 1)) - prevSq); }
+    function milestoneAward(cnt) { const m = { 3: 25, 6: 75, 8: 100 }; return m[cnt] || 0; }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // 重置当前连续
+      state.currentConsec = 0;
+      save(); // 保存状态
+      updateConsecBadge(); // 更新显示
+    });
+
+    function updateConsecBadge() {
+      $('#consecBadge').textContent = '当前连续：' + state.currentConsec;
+    }
+
+    // =============== 主题与声音 ===============
+    function applyTheme() {
+      const root = document.body;
+      const t = state.settings.theme;
+      const map = {
+        ocean: ['from-sky-50', 'via-cyan-50', 'to-indigo-50'],
+        aurora: ['from-emerald-50', 'via-teal-50', 'to-lime-50'],
+        candy: ['from-pink-50', 'via-rose-50', 'to-amber-50'],
+        mono: ['from-slate-50', 'via-gray-50', 'to-zinc-50'],
+        sunset: ['from-rose-50', 'via-sky-50', 'to-emerald-50'],
+      };
+      root.className = 'min-h-screen bg-gradient-to-br text-slate-800 ' + map[t].join(' ');
+    }
+    function useBeep() {
+      const ctxRef = { current: null };
+      const ensure = () => { if (!ctxRef.current) ctxRef.current = new (window.AudioContext || window.webkitAudioContext)(); };
+      const play = (seq) => { if (!state.settings.sound) return; try { ensure(); const ctx = ctxRef.current; let t = ctx.currentTime; seq.forEach(([f, d]) => { const o = ctx.createOscillator(); const g = ctx.createGain(); o.type = 'sine'; o.frequency.value = f; g.gain.value = state.settings.volume; o.connect(g).connect(ctx.destination); o.start(t); o.stop(t + d / 1000); t += d / 1000 * 1.05; }); } catch (e) { } };
+      return {
+        start: () => play([[660, 120], [880, 120]]), pause: () => play([[440, 160]]), workDone: () => play([[880, 150], [988, 150], [1046, 220]]), breakDone: () => play([[523, 150], [659, 200]]), lottery: () => play([[392, 100], [523, 100], [659, 160]]), success: () => play([[784, 140], [988, 200]])
+      };
+    }
+
+    // =============== 全局状态与元素 ===============
+    const state = load();
+    // 清理迁移：移除历史中的“抽奖产出”记录
+    if (state && Array.isArray(state.ledger)) {
+      state.ledger = state.ledger.filter(l => l.reason !== 'LOTTERY_GAIN');
+      save();
+    }
+    const beep = useBeep();
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => document.querySelectorAll(sel);
+
+    // 顶部与首页信息
+    $('#pointBadge').textContent = state.points;
+    $('#quickPoints').textContent = state.points;
+    $('#themeSelect').value = state.settings.theme;
+    $('#soundToggle').checked = state.settings.sound;
+    $('#year').textContent = new Date().getFullYear();
+
+    function refreshTodayInfo() {
+      const day = todayKey(new Date());
+      const count = state.pomodoros.filter(p => todayKey(new Date(p.finishedAt)) === day).length;
+      $('#todayCount').textContent = '今日已完成：' + count;
+      $('#consecBadge').textContent = '当前连续：' + state.currentConsec;
+    }
+    refreshTodayInfo();
+
+    // 主题 & 声音
+    $('#themeSelect').addEventListener('change', e => { state.settings.theme = e.target.value; applyTheme(); save(); });
+    $('#soundToggle').addEventListener('change', e => { state.settings.sound = e.target.checked; save(); });
+    applyTheme();
+
+    // =============== 视图切换 ===============
+    const views = ['home', 'sign', 'lottery', 'notice', 'stats', 'dev', 'ledger', "help"];
+    function nav(to) { views.forEach(v => $('#view-' + v).classList.toggle('hidden', v !== to)); }
+    document.querySelectorAll('[data-home]').forEach(b => b.addEventListener('click', () => nav('home')));
+    document.querySelectorAll('[data-link]').forEach(a => a.addEventListener('click', (e) => { e.preventDefault(); const to = a.getAttribute('data-link'); nav(to); if (to === 'stats') { drawAllCharts(); } if (to === 'sign') { renderCalendar(); renderStreakStats(); } if (to === 'ledger') { buildLedgerFilterOptions(); renderLedgerPage(); } }));
+
+    // =============== 开发者密码弹窗 ===============
+    function showDevPwdDialog(callback) {
+      const dialog = document.getElementById('devPwdDialog');
+      const input = document.getElementById('devPwdInput');
+      dialog.classList.remove('hidden');
+      input.value = '';
+      input.focus();
+
+      function close() {
+        dialog.classList.add('hidden');
+        document.getElementById('devPwdOk').onclick = null;
+        document.getElementById('devPwdCancel').onclick = null;
+      }
+
+      document.getElementById('devPwdOk').onclick = function () {
+        close();
+        callback(input.value);
+      };
+      document.getElementById('devPwdCancel').onclick = function () {
+        close();
+        callback(null);
+      };
+    }
+
+    // 标题点击 5 次解锁开发者
+    let clickCount = 0; let clickTimer = null;
+    $('#appTitle').addEventListener('click', () => {
+      clickCount++;
+      clearTimeout(clickTimer);
+      clickTimer = setTimeout(() => { clickCount = 0; }, 1200);
+      if (clickCount >= 5) {
+        showDevPwdDialog(function (pwd) {
+          if (pwd === '8424') {
+            state.devUnlocked = true;
+            save();
+            showAlert('开发者模式已解锁');
+            nav('dev');
+            updateDevStatus(); // 更新开发者模式状态
+          } else if (pwd !== null) {
+            showAlert('密码错误');
+          }
+          clickCount = 0;
+        });
+      }
+    });
+    $('#devBtn').addEventListener('click', () => nav('dev'));
+
+    // =============== 积分记录面板 ===============
+    function fmtTs(ts) {
+      try { return new Date(ts).toLocaleString(); } catch (e) { return String(ts); }
+    }
+    function renderLedger() {
+      const wrap = $('#ledgerList');
+      if (!wrap) return;
+      const list = state.ledger || [];
+      wrap.innerHTML = list.length ? '' : '<div class="text-slate-500">暂无记录</div>';
+      list.forEach((l, idx) => {
+        const row = document.createElement('div');
+        row.className = 'py-2 flex items-center justify-between';
+        const left = document.createElement('div');
+        const reason = SCORE_SRC[l.reason] || l.reason;
+        left.innerHTML = `<div class="font-medium">${reason}</div><div class="text-xs text-slate-500">${fmtTs(l.ts)}</div>`;
+        const right = document.createElement('div');
+        right.className = 'font-bold ' + (l.delta >= 0 ? 'text-emerald-600' : 'text-rose-600');
+        right.textContent = (l.delta >= 0 ? '+' : '') + l.delta;
+        row.appendChild(left);
+        row.appendChild(right);
+        wrap.appendChild(row);
+      });
+    }
+    const ledgerPanel = $('#ledgerPanel');
+    const btnLedger = $('#btnLedger');
+    const btnLedgerClose = $('#btnLedgerClose');
+    if (btnLedger) {
+      btnLedger.addEventListener('click', () => { if (ledgerPanel) { ledgerPanel.classList.toggle('hidden'); renderLedger(); } });
+    }
+    if (btnLedgerClose) {
+      btnLedgerClose.addEventListener('click', () => { if (ledgerPanel) { ledgerPanel.classList.add('hidden'); } });
+    }
+
+    let quick = { work: 25, rest: 5, running: false, phase: 'work', remaining: 25 * 60, timer: null, loopsTarget: 4, loopsDone: 0 };
+
+    function refreshTodayInfo() {
+      const day = todayKey(new Date());
+      const lastRefreshDate = localStorage.getItem('lastRefreshDate');
+
+      // 如果日期不一致，重置今日完成计数
+      if (lastRefreshDate !== day) {
+        localStorage.setItem('lastRefreshDate', day);
+        state.pomodoros = state.pomodoros.filter(p => todayKey(new Date(p.finishedAt)) === day); // 保留当天记录
+        save();
+      }
+
+      const count = state.pomodoros.filter(p => todayKey(new Date(p.finishedAt)) === day).length;
+      $('#todayCount').textContent = '今日已完成：' + count;
+      $('#consecBadge').textContent = '当前连续：' + state.currentConsec;
+    }
+
+    function updateQuickUI() {
+      if (!quick.running && quick.remaining === quick.work * 60) {
+        // 如果计时器未运行且尚未开始
+        $('#quickPhase').textContent = '未开始 ⏳';
+      } else if (!quick.running) {
+        // 如果计时器暂停
+        $('#quickPhase').textContent = quick.phase === 'work' ? '专注中 🔥 (已暂停)' : '休息中 🪴 (已暂停)';
+      } else {
+        // 如果计时器正在运行
+        $('#quickPhase').textContent = quick.phase === 'work' ? '专注中 🔥' : '休息中 🪴';
+      }
+
+      const m = String(Math.floor(quick.remaining / 60)).padStart(2, '0');
+      const s = String(Math.floor(quick.remaining % 60)).padStart(2, '0');
+      $('#quickClock').textContent = `${m}:${s}`;
+      const total = (quick.phase === 'work' ? quick.work : quick.rest) * 60;
+      const deg = (1 - quick.remaining / Math.max(total, 1)) * 360;
+
+      // 根据工作或休息阶段设置颜色
+      const color = quick.phase === 'work' ? '#fb7185' : '#34d399'; // 红色（工作）和绿色（休息）
+      $('#quickRing').style.background = `conic-gradient(${color} ${deg}deg, rgba(255,255,255,0.6) 0deg)`;
+
+      // 动态计算下次完成番茄钟的积分（不包含随机奖励）
+      const basePoints = 50; // 基础奖励
+      const consecutiveBonus = consecExtraDelta(state.currentConsec || 0); // 连续奖励
+      const nextPoints = basePoints + consecutiveBonus;
+
+      $('#quickPoints').textContent = nextPoints; // 更新下次获得的积分显示
+      $('#pointBadge').textContent = state.points;
+
+      // 循环状态
+      try {
+        const st = document.getElementById('quickLoopsStatus');
+        if (st) {
+          st.textContent = `循环：${quick.loopsDone || 0}/${quick.loopsTarget || 0}`;
+        }
+      } catch (e) { }
+    }
+
+
+    function quickTick() {
+      if (!quick.running) return;
+      if (quick.remaining <= 0) {
+        if (quick.phase === 'work') {
+          // 完成奖励
+          state.pomodoros.unshift({ finishedAt: now() });
+          addPoints(50, 'POMO_BASE');
+          const delta = consecExtraDelta(state.currentConsec || 0);
+          if (delta > 0) addPoints(delta, 'POMO_CONSEC', { consec: (state.currentConsec || 0) + 1 });
+          state.currentConsec = (state.currentConsec || 0) + 1;
+          const r = Math.random(); if (r < 0.05) addPoints(100, 'POMO_RANDOM_100'); else if (r < 0.15) addPoints(10, 'POMO_RANDOM_10');
+          const day = todayKey(new Date()); if (state.dayMilestones.date !== day) { state.dayMilestones = { date: day, hits: [] }; }
+          const todayCount = state.pomodoros.filter(p => todayKey(new Date(p.finishedAt)) === day).length;
+          const award = milestoneAward(todayCount);
+          if (award > 0 && !state.dayMilestones.hits.includes(todayCount)) { addPoints(award, 'DAILY_MILESTONE', { milestone: todayCount }); state.dayMilestones.hits.push(todayCount); }
+          save(); refreshTodayInfo();
+          // 完成一个番茄（工作段）
+          quick.loopsDone = (quick.loopsDone || 0) + 1;
+          beep.workDone();
+          // 若达到目标循环次数，则停表并复位到工作段起点
+          if (quick.loopsTarget > 0 && quick.loopsDone >= quick.loopsTarget) {
+            quick.running = false; quick.phase = 'work'; quick.remaining = quick.work * 60;
+            showAlert(`本轮已完成 ${quick.loopsDone} 个番茄，已结束。`);
+          } else {
+            quick.phase = 'break'; quick.remaining = quick.rest * 60; quick.running = true;
+          }
+        } else {
+          beep.breakDone();
+          quick.phase = 'work'; quick.remaining = quick.work * 60; quick.running = true;
+        }
+      } else {
+        quick.remaining -= 1;
+      }
+      updateQuickUI();
+    }
+    setInterval(quickTick, 1000);
+    $('#quickStart').addEventListener('click', () => {
+      quick.work = clamp(parseFloat($('#quickWork').value || '25'), 0.1, 600); // 支持小数
+      quick.rest = clamp(parseFloat($('#quickBreak').value || '5'), 0.1, 600); // 支持小数
+      quick.loopsTarget = clamp(parseInt($('#quickLoops').value || '4'), 1, 999);
+      quick.loopsDone = 0;
+      quick.phase = 'work';
+      quick.remaining = quick.work * 60; // 将分钟转换为秒
+      quick.running = true;
+      $('#quickStart').classList.add('hidden');
+      $('#quickPause').classList.remove('hidden');
+      beep.start();
+      updateQuickUI();
+    });
+    $('#quickPause').addEventListener('click', () => {
+      quick.running = false; // 设置为暂停状态
+      clearInterval(quick.timer); // 停止计时器
+      $('#quickPause').classList.add('hidden');
+      $('#quickStart').classList.remove('hidden');
+      updateQuickUI(); // 更新界面
+    });
+    $('#quickReset').addEventListener('click', () => { quick.running = false; quick.phase = 'work'; quick.remaining = quick.work * 60; quick.loopsDone = 0; save(); updateQuickUI(); });
+    updateQuickUI();
+
+
+
+    // =============== Ledger 工具：过滤 / 排序 / 导出 ===============
+    function beginningOfMonth(d) {
+      const x = new Date(d.getFullYear(), d.getMonth(), 1); x.setHours(0, 0, 0, 0); return x;
+    }
+    function endOfDay(d) {
+      const x = new Date(d); x.setHours(23, 59, 59, 999); return x;
+    }
+    function getFilteredAndSortedLedger() {
+      const list = state.ledger || [];
+      const reasonSel = document.getElementById('ledgerFilter');
+      const rangeSel = document.getElementById('timeRange');
+      const fromEl = document.getElementById('dateFrom');
+      const toEl = document.getElementById('dateTo');
+      const sortField = (document.getElementById('sortField') || { value: 'time' }).value;
+      const sortOrder = (document.getElementById('sortOrder') || { value: 'desc' }).value;
+
+      const activeReason = reasonSel ? reasonSel.value : 'ALL';
+      const now = new Date();
+      let fromTs = null, toTs = null;
+      if (rangeSel) {
+        const mode = rangeSel.value;
+        if (mode === 'LAST7') {
+          const from = new Date(now.getTime() - 6 * 24 * 3600 * 1000); from.setHours(0, 0, 0, 0);
+          const to = endOfDay(now);
+          fromTs = +from; toTs = +to;
+        } else if (mode === 'MONTH') {
+          const from = beginningOfMonth(now);
+          const to = endOfDay(now);
+          fromTs = +from; toTs = +to;
+        } else if (mode === 'CUSTOM') {
+          const f = fromEl && fromEl.value ? new Date(fromEl.value + 'T00:00:00') : null;
+          const t = toEl && toEl.value ? new Date(toEl.value + 'T23:59:59') : null;
+          if (f) fromTs = +f; if (t) toTs = +t;
+        }
+      }
+
+      // 1) 原因筛选
+      let arr = activeReason === 'ALL' ? list.slice() : list.filter(l => l.reason === activeReason);
+      // 2) 时间筛选
+      arr = arr.filter(l => {
+        if (fromTs != null && +l.ts < fromTs) return false;
+        if (toTs != null && +l.ts > toTs) return false;
+        return true;
+      });
+      // 3) 排序
+      arr.sort((a, b) => {
+        let av = sortField === 'delta' ? (a.delta || 0) : (a.ts || 0);
+        let bv = sortField === 'delta' ? (b.delta || 0) : (b.ts || 0);
+        if (sortOrder === 'asc') return av - bv;
+        return bv - av;
+      });
+      return arr;
+    }
+
+    function exportLedgerCSV() {
+      const rows = getFilteredAndSortedLedger();
+      const header = ['时间', '项目', '变动'];
+      const lines = [header.join(',')];
+      rows.forEach(l => {
+        const t = fmtTs(l.ts).replace(/,/g, ' ');
+        const reason = (SCORE_SRC[l.reason] || l.reason).replace(/,/g, ' ');
+        const delta = (l.delta >= 0 ? '+' : '') + l.delta;
+        lines.push([t, reason, delta].join(','));
+      });
+      const csv = '\ufeff' + lines.join('\n'); // BOM 以便 Excel 正确识别 UTF-8
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const now = new Date();
+      const pad = n => String(n).padStart(2, '0');
+      a.href = url;
+      a.download = `积分记录_${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 0);
+    }
+
+    // =============== 积分记录页面 ===============
+    function fmtTs(ts) {
+      try { return new Date(ts).toLocaleString(); } catch (e) { return String(ts); }
+    }
+
+    function buildLedgerFilterOptions() {
+      const sel = $('#ledgerFilter'); if (!sel) return;
+      // collect reason codes present in ledger
+      const list = state.ledger || [];
+      const codes = Array.from(new Set(list.map(l => l.reason))).filter(Boolean);
+      // clear (keep '全部' as first option)
+      sel.innerHTML = '';
+      const optAll = document.createElement('option'); optAll.value = 'ALL'; optAll.textContent = '全部'; sel.appendChild(optAll);
+      codes.forEach(code => {
+        const opt = document.createElement('option');
+        const label = SCORE_SRC[code] || code;
+        opt.value = code;
+        opt.textContent = label;
+        sel.appendChild(opt);
+      });
+    }
+
+    // 渲染积分记录页面
+    function renderLedgerPage() {
+      const wrap = $('#ledgerList');
+      if (!wrap) return;
+      const rows = getFilteredAndSortedLedger();
+      wrap.innerHTML = rows.length ? '' : '<div class="text-slate-500">暂无记录</div>';
+      rows.forEach((l) => {
+        const row = document.createElement('div');
+        row.className = 'py-2 flex text-center';
+        const time = document.createElement('div'); time.className = 'flex-1'; time.textContent = fmtTs(l.ts);
+        const reasonDiv = document.createElement('div'); reasonDiv.className = 'flex-1'; reasonDiv.textContent = (SCORE_SRC[l.reason] || l.reason);
+        const deltaDiv = document.createElement('div'); deltaDiv.className = 'flex-1 font-bold ' + (l.delta >= 0 ? 'text-emerald-600' : 'text-rose-600'); deltaDiv.textContent = (l.delta >= 0 ? '+' : '') + l.delta;
+        row.appendChild(time); row.appendChild(reasonDiv); row.appendChild(deltaDiv);
+        wrap.appendChild(row);
+      });
+    }
+
+
+    // 交互监听：筛选与排序
+    document.addEventListener('change', (e) => {
+      const id = e.target && e.target.id;
+      if (id === 'ledgerFilter' || id === 'timeRange' || id === 'sortField' || id === 'sortOrder' || id === 'dateFrom' || id === 'dateTo') {
+        // 若选择“自定义”，显示日期输入
+        if (id === 'timeRange') {
+          const cd = document.getElementById('customDates');
+          if (cd) { cd.classList.toggle('hidden', e.target.value !== 'CUSTOM'); }
+        }
+        renderLedgerPage();
+      }
+    });
+    // 导出 CSV
+    document.addEventListener('click', (e) => {
+      if (e.target && e.target.id === 'exportCSV') {
+        exportLedgerCSV();
+      }
+    });
+
+    // =============== 签到日历 ===============
+    let calState = (() => { const d = new Date(); return { year: d.getFullYear(), month: d.getMonth() }; })();
+    function firstDayOfMonth(y, m) { return new Date(y, m, 1); }
+    function daysInMonth(y, m) { return new Date(y, m + 1, 0).getDate(); }
+    function renderCalendar() {
+      const titleEl = document.getElementById('calTitle');
+      const gridEl = document.getElementById('calGrid');
+      if (!titleEl || !gridEl) return;
+      const y = calState.year, m = calState.month;
+      titleEl.textContent = `${y} 年 ${m + 1} 月`;
+      const first = firstDayOfMonth(y, m);
+      const startWeekday = first.getDay();
+      const dim = daysInMonth(y, m);
+      const signed = new Set((state.sign && state.sign.history) ? state.sign.history : []);
+      const cells = [];
+      const prevDim = daysInMonth(y, (m - 1 + 12) % 12);
+      for (let i = 0; i < startWeekday; i++) {
+        const dayNum = prevDim - startWeekday + 1 + i;
+        cells.push({ type: 'prev', day: dayNum, real: new Date(y, m - 1, dayNum) });
+      }
+      for (let d = 1; d <= dim; d++) { cells.push({ type: 'cur', day: d, real: new Date(y, m, d) }); }
+      while (cells.length % 7 !== 0 || cells.length < 42) {
+        const d = cells.length - (startWeekday + dim) + 1;
+        cells.push({ type: 'next', day: d, real: new Date(y, m + 1, d) });
+      }
+      gridEl.innerHTML = '';
+      const todayStr = todayKey(new Date());
+      cells.forEach(c => {
+        const cell = document.createElement('div');
+        cell.className = 'cal-cell' + (c.type !== 'cur' ? ' muted' : '');
+        const yyyy = c.real.getFullYear();
+        const mm = String(c.real.getMonth() + 1).padStart(2, '0');
+        const dd = String(c.real.getDate()).padStart(2, '0');
+        const key = `${yyyy}-${mm}-${dd}`;
+        const day = document.createElement('div'); day.className = 'day'; day.textContent = c.day;
+        const mark = document.createElement('div'); mark.className = 'mark'; mark.textContent = signed.has(key) ? '✅' : (key === todayStr ? '•' : '');
+        cell.appendChild(day); cell.appendChild(mark); gridEl.appendChild(cell);
+      });
+    }
+    document.addEventListener('click', e => {
+      if (e.target && e.target.id === 'calPrev') { if (calState.month === 0) { calState.month = 11; calState.year--; } else { calState.month--; } renderCalendar(); renderStreakStats(); }
+      if (e.target && e.target.id === 'calNext') { if (calState.month === 11) { calState.month = 0; calState.year++; } else { calState.month++; } renderCalendar(); renderStreakStats(); }
+    });
+
+
+
+    // =============== 签到连续统计 ===============
+    function ymd(d) {
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      return `${yyyy}-${mm}-${dd}`;
+    }
+    function parseHistory(hist) {
+      if (!hist || !hist.length) return [];
+      const uniq = Array.from(new Set(hist));
+      const dates = uniq.map(s => new Date(s + 'T00:00:00')).filter(d => !isNaN(d));
+      dates.sort((a, b) => a - b);
+      return dates;
+    }
+    function computeStreakStats(hist) {
+      const dates = parseHistory(hist);
+      if (dates.length === 0) {
+        return { maxLen: 0, maxStart: null, maxEnd: null, breaks: [] };
+      }
+      let maxLen = 1, curLen = 1;
+      let maxStart = dates[0], maxEnd = dates[0];
+      let curStart = dates[0];
+      const breaks = [];
+      for (let i = 1; i < dates.length; i++) {
+        const prev = dates[i - 1];
+        const curr = dates[i];
+        const diffDays = Math.round((curr - prev) / 86400000);
+        if (diffDays === 1) {
+          curLen += 1;
+        } else {
+          // 记录断点：prev -> curr 之间出现了 gap
+          breaks.push({ from: ymd(prev), to: ymd(curr), gapDays: diffDays - 1 });
+          // 结算当前连续
+          if (curLen > maxLen) { maxLen = curLen; maxStart = curStart; maxEnd = prev; }
+          curLen = 1; curStart = curr;
+        }
+        // 最后一段收尾
+        if (i === dates.length - 1) {
+          if (curLen > maxLen) { maxLen = curLen; maxStart = curStart; maxEnd = curr; }
+        }
+      }
+      // 如果历史只有一天
+      if (dates.length === 1) { maxStart = dates[0]; maxEnd = dates[0]; }
+      return { maxLen, maxStart, maxEnd, breaks };
+    }
+    function renderStreakStats() {
+      const elMax = document.getElementById('streakMax');
+      const elBreaks = document.getElementById('streakBreaks');
+      if (!elMax || !elBreaks) return;
+      const hist = (state.sign && state.sign.history) ? state.sign.history : [];
+      const st = computeStreakStats(hist);
+      if (st.maxLen > 0) {
+        const range = (st.maxStart && st.maxEnd) ? `（${ymd(st.maxStart)} 至 ${ymd(st.maxEnd)}）` : '';
+        elMax.textContent = `最长连续：${st.maxLen} 天 ${range}`;
+      } else {
+        elMax.textContent = '最长连续：—';
+      }
+      if (st.breaks.length === 0) {
+        elBreaks.textContent = '断点：无';
+      } else {
+        // 仅显示最近 5 个断点，格式：YYYY-MM-DD → YYYY-MM-DD（间隔 n 天）
+        const recent = st.breaks.slice(-5);
+        elBreaks.innerHTML = '断点：' + recent.map(b => `${b.from} → ${b.to}（间隔 ${b.gapDays} 天）`).join('；');
+      }
+    }
+
+
+    // =============== 签到 ===============
+    function refreshSign() { const s = state.sign; $('#signLast').textContent = '上次签到：' + (s.lastDate || '—'); $('#signStreak').textContent = '连续：' + s.streak + ' 天（上限 30）'; $('#signTotal').textContent = '累计签到：' + (s.totalDays || 0) + ' 天'; renderCalendar(); renderStreakStats(); }
+    refreshSign();
+    $('#btnSign').addEventListener('click', () => {
+      const day = todayKey(new Date()); if (state.sign.lastDate === day) { showAlert('今日已签到'); $('#btnSign').textContent = '✒ 今日已签'; return; }
+      const y = todayKey(new Date(Date.now() - 24 * 3600 * 1000)); let next = state.sign.lastDate === y ? state.sign.streak + 1 : 1; next = Math.min(next, 30);
+      if (!state.sign.history) state.sign.history = []; if (!state.sign.history.includes(day)) state.sign.history.push(day); state.sign = { lastDate: day, streak: next, totalDays: (state.sign.totalDays || 0) + 1, history: state.sign.history };
+      const reward = next * 10; addPoints(reward, 'SIGNIN', { streak: next }); beep.success(); save(); refreshSign(); $('#btnSign').textContent = '✒ 今日已签'; $('#pointBadge').textContent = state.points; $('#quickPoints').textContent = state.points; showAlert(`签到成功，奖励 ${reward} 分（连续 ${next} 天）`); renderStreakStats();
+    });
+
+    // =============== 一番赏记录 ===============
+    function fmtTs(ts) { try { return new Date(ts).toLocaleString(); } catch (e) { return String(ts); } }
+    function renderLotteryLog() {
+      const wrap = $('#lotteryLogList'); if (!wrap) return;
+      const list = (state.lotteryLog && Array.isArray(state.lotteryLog)) ? state.lotteryLog : [];
+      wrap.innerHTML = list.length ? '' : '<div class="text-slate-500 p-2 text-center">暂无记录</div>';
+      list.forEach((r) => {
+        const row = document.createElement('div');
+        row.className = 'py-2 flex text-center';
+        const time = document.createElement('div'); time.className = 'flex-1'; time.textContent = fmtTs(r.ts);
+        const tier = document.createElement('div'); tier.className = 'flex-1'; tier.textContent = (r.tier + '赏');
+        const prize = document.createElement('div'); prize.className = 'flex-1'; prize.textContent = r.prize;
+        row.appendChild(time); row.appendChild(tier); row.appendChild(prize);
+        wrap.appendChild(row);
+      });
+    }
+    (function attachLotteryLogHandlers() {
+      const btn = document.getElementById('btnLotteryLog');
+      const panel = document.getElementById('lotteryLogPanel');
+      const close = document.getElementById('btnLotteryLogClose');
+      if (btn && panel) {
+        btn.addEventListener('click', () => { panel.classList.toggle('hidden'); renderLotteryLog(); });
+      }
+      if (close && panel) {
+        close.addEventListener('click', () => panel.classList.add('hidden'));
+      }
+    })();
+
+    const tierProb = { A: 0.03, B: 0.085, C: 0.885 };
+    function drawTier() { const r = Math.random(); if (r < tierProb.A) return 'A'; else if (r < tierProb.A + tierProb.B) return 'B'; return 'C'; }
+    $('#btnDraw').addEventListener('click', () => {
+      if (state.points < 300) { showAlert('积分不足（需要 300）'); return; }
+      addPoints(-300, 'LOTTERY_COST'); save(); $('#pointBadge').textContent = state.points; $('#quickPoints').textContent = state.points;
+      beep.lottery();
+      const wrap = $('#flipWrap'); wrap.classList.remove('rotate-y-180'); $('#lotteryResult').classList.add('hidden');
+      setTimeout(() => wrap.classList.add('rotate-y-180'), 100);
+      setTimeout(() => {
+        const tier = drawTier(); const pool = state.lottery[tier]; const prize = pool.length ? randomChoice(pool) : `${tier}类空奖`;
+        $('#lotteryPrize').textContent = prize; $('#lotteryTier').textContent = tier + '赏'; $('#lotteryResult').classList.remove('hidden');
+        // 记录抽奖日志（不涉及积分）
+        try {
+          if (!Array.isArray(state.lotteryLog)) state.lotteryLog = [];
+          state.lotteryLog.unshift({ ts: Date.now(), tier, prize });
+        } catch (e) { }
+        save();
+      }, 900);
+    });
+
+    // 奖池设置
+    const dlg = document.getElementById('poolDialog');
+    $('#btnPool').addEventListener('click', () => { $('#poolA').value = state.lottery.A.join('\n'); $('#poolB').value = state.lottery.B.join('\n'); $('#poolC').value = state.lottery.C.join('\n'); dlg.showModal(); });
+    $('#poolSave').addEventListener('click', (e) => { e.preventDefault(); state.lottery = { A: $('#poolA').value.split(/\n+/).filter(Boolean), B: $('#poolB').value.split(/\n+/).filter(Boolean), C: $('#poolC').value.split(/\n+/).filter(Boolean) }; save(); dlg.close(); });
+
+    // =============== 统计（Chart.js） ===============
+    let charts = {};
+    function drawAllCharts() {
+      // 当日按小时
+      const today = todayKey(new Date()); const byHour = Array.from({ length: 24 }, (_, h) => 0);
+      state.pomodoros.forEach(p => { const d = new Date(p.finishedAt); if (todayKey(d) === today) byHour[d.getHours()]++; });
+      charts.hour && charts.hour.destroy(); charts.hour = new Chart(document.getElementById('chartHour'), { type: 'bar', data: { labels: byHour.map((_, i) => i + ':00'), datasets: [{ label: '完成数', data: byHour }] }, options: { responsive: true, maintainAspectRatio: false } });
+
+      // 最近7天
+      const end = startOfDay(now()); const start = end - 6 * 24 * 3600 * 1000; const by7 = Array.from({ length: 7 }, () => 0);
+      state.pomodoros.forEach(p => { const d = startOfDay(p.finishedAt); if (d >= start && d <= end) { const idx = Math.floor((d - start) / (24 * 3600 * 1000)); by7[idx]++; } });
+      charts.d7 && charts.d7.destroy(); charts.d7 = new Chart(document.getElementById('chart7'), { type: 'bar', data: { labels: by7.map((_, i) => { const dd = new Date(start + i * 24 * 3600 * 1000); return dd.toISOString().slice(5, 10); }), datasets: [{ label: '完成数', data: by7 }] }, options: { responsive: true, maintainAspectRatio: false } });
+
+      // 当月
+      const sMonth = startOfMonth(now()); const base = new Date(sMonth); const daysInMonth = new Date(base.getFullYear(), base.getMonth() + 1, 0).getDate(); const byM = Array.from({ length: daysInMonth }, () => 0);
+      state.pomodoros.forEach(p => { const d = new Date(p.finishedAt); if (d.getTime() >= sMonth && d.getMonth() === base.getMonth()) { byM[d.getDate() - 1]++; } });
+      charts.month && charts.month.destroy(); charts.month = new Chart(document.getElementById('chartMonth'), { type: 'bar', data: { labels: byM.map((_, i) => String(i + 1)), datasets: [{ label: '完成数', data: byM }] }, options: { responsive: true, maintainAspectRatio: false } });
+
+      // 积分收支与来源
+      const byReason = {}; state.ledger.forEach(l => { const key = SCORE_SRC[l.reason] || l.reason; byReason[key] = (byReason[key] || 0) + l.delta; });
+      const labels = Object.keys(byReason); const data = labels.map(k => byReason[k]);
+      charts.ledger && charts.ledger.destroy(); charts.ledger = new Chart(document.getElementById('chartLedger'), { type: 'bar', data: { labels, datasets: [{ label: '积分变化', data }] }, options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y' } });
+    }
+
+    // =============== 开发者面板 ===============
+    $('#devLockBtn').addEventListener('click', () => {
+      showConfirm('确定关闭开发者模式？', (confirmed) => {
+        if (confirmed) {
+          state.devUnlocked = false;
+          save();
+          updateDevStatus(); // 更新开发者模式状态
+          showAlert('开发者模式已关闭');
+        }
+      });
+    });
+
+    $('#devApply').addEventListener('click', () => {
+      if (!state.devUnlocked) {
+        showAlert('未解锁开发者模式');
+        return;
+      }
+
+      // 使用自定义确认弹窗
+      showConfirm('确定应用？此操作不可撤销。', function (confirmed) {
+        if (!confirmed) return; // 如果用户取消，则不执行后续逻辑
+
+        const pts = parseInt($('#devPts').value || '0'); // 修改积分
+        const add = parseInt($('#devPomos').value || '0'); // 增加番茄钟数量
+
+        if (pts) addPoints(pts, 'ADJUST');
+        for (let i = 0; i < add; i++) {
+          state.pomodoros.unshift({ finishedAt: now() });
+        }
+
+        // 重新计算当前连续完成的番茄钟数量
+        const today = todayKey(new Date());
+        const todayPomodoros = state.pomodoros.filter(p => todayKey(new Date(p.finishedAt)) === today);
+        state.currentConsec = todayPomodoros.length;
+
+        save(); // 保存状态
+        refreshTodayInfo(); // 刷新今日信息
+        updateQuickUI(); // 更新 UI
+
+        $('#pointBadge').textContent = state.points;
+        $('#quickPoints').textContent = state.points;
+
+        showAlert('已应用');
+      });
+    });
+
+    $('#devClear').addEventListener('click', () => {
+      showConfirm('确定清空所有本地数据？此操作不可恢复。', function (ok) {
+        if (ok) {
+          localStorage.removeItem(LS_KEY);
+          location.reload();
+        }
+      });
+    });
+
+    // =============== 自测（控制台） ===============
+    console.assert(consecExtraDelta(0) === 0, 'T1'); console.assert(consecExtraDelta(1) === 5, 'T2'); console.assert(consecExtraDelta(2) === 15, 'T3');
+    console.assert(milestoneAward(3) === 25, 'M1'); console.assert(milestoneAward(6) === 75, 'M2'); console.assert(milestoneAward(8) === 100, 'M3'); console.assert(milestoneAward(4) === 0, 'M4');
+    console.info('%cSelf tests passed', 'color:green');
+
+    // =============== 自定义弹窗 ===============
+    function showAlert(msg) {
+      const alertBox = document.getElementById('customAlert');
+      const alertMsg = document.getElementById('customAlertMsg');
+      alertMsg.textContent = msg;
+      alertBox.classList.remove('hidden');
+      document.getElementById('customAlertBtn').onclick = () => {
+        alertBox.classList.add('hidden');
+      };
+    }
+
+    function showConfirm(msg, callback) {
+      // 如果已存在则复用
+      let dialog = document.getElementById('customConfirm');
+      if (!dialog) {
+        dialog = document.createElement('div');
+        dialog.id = 'customConfirm';
+        dialog.className = 'fixed inset-0 bg-black/30 flex items-center justify-center z-50';
+        dialog.innerHTML = `
+      <div class="bg-white rounded-xl p-5 shadow text-center min-w-[220px]">
+        <div class="mb-3 font-semibold" id="customConfirmMsg"></div>
+        <div class="flex justify-center gap-3">
+          <button id="customConfirmCancel" class="border rounded px-4 py-2 bg-slate-200">取消</button>
+          <button id="customConfirmOk" class="border rounded px-4 py-2 bg-amber-50">确定</button>
+        </div>
+      </div>
+    `;
+        document.body.appendChild(dialog);
+      }
+      document.getElementById('customConfirmMsg').textContent = msg;
+      dialog.classList.remove('hidden');
+      document.getElementById('customConfirmOk').onclick = function () {
+        dialog.classList.add('hidden');
+        callback(true);
+      };
+      document.getElementById('customConfirmCancel').onclick = function () {
+        dialog.classList.add('hidden');
+        callback(false);
+      };
+    }
+
+    function updateDevStatus() {
+      const devStatusText = $('#devStatusText');
+      const devLockBtn = $('#devLockBtn');
+
+      if (state.devUnlocked) {
+        devStatusText.textContent = '已解锁开发者模式';
+        devStatusText.classList.remove('text-red-600');
+        devLockBtn.classList.remove('hidden'); // 显示关闭按钮
+      } else {
+        devStatusText.textContent = '🔒 未解锁开发者模式，以下功能不可使用。';
+        devStatusText.classList.add('text-red-600');
+        devLockBtn.classList.add('hidden'); // 隐藏关闭按钮
+      }
+    }
+
+    updateDevStatus();
+
+  </script>
+</body>
+
+</html>
